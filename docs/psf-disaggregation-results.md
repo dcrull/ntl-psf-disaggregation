@@ -1,6 +1,6 @@
 # PSF disaggregation sprint results
 
-Last updated: 2026-08-03
+Last updated: 2026-08-07
 
 ## Final evidence classification
 
@@ -54,7 +54,7 @@ amplification relative to uniform smoothing.
 method result. It does not independently validate the fine-grid values or show
 that structural upweighting recovers true lighting magnitude.
 
-## Main evidence
+## Demonstrated findings
 
 ### Physics-buffered held-out cells
 
@@ -192,6 +192,29 @@ valid interiors. For built form, MAE increases from 6.29 to 10.21 in New York
 and from 4.47 to 7.31 in Delhi between 750 and 1500 m FWHM. Valid-output
 fractions fall from 0.952 to 0.809 and from 0.978 to 0.880. These are internal
 operator diagnostics, not identification of the true sensor response.
+
+## Limitations
+
+- The fine grid is a structural allocation of coarse VNP46A2 radiance, not an
+  observed, calibrated, or independently validated 10 m nighttime-light
+  measurement.
+- The held-out comparison validates a coarse structural-gain analogue. It does
+  not validate the exact fine-grid allocation or identify a physical VIIRS PSF.
+- Structural gain is asymmetric: downweighting generally helps, while strong
+  upweighting hurts. Built form constrains plausible locations but does not
+  measure lighting magnitude.
+- The water-versus-inland analysis is descriptive. Its low-proxy inland control
+  is not a distribution-matched counterfactual, and no independent nighttime
+  reference validates waterfront allocation.
+- Broad QA closes the reporting-primary VNP coverage gaps by admitting lower
+  quality observations. The New York S2-only ablation retains a separate proxy
+  support mask, and the displayed Delhi S2-only raster remains strict-v1.
+- Strict daily complete-kernel support is limited, especially in New York, and
+  reductions in lunar/cloud association relative to direct upsampling reflect
+  smoothing rather than causal correction.
+- The two-city demonstration does not establish geographic generality. The
+  reporting built-form source is also temporally mismatched with 2024 radiance,
+  because the reproducible Overture release postdates the observation window.
 
 ## Supported claims
 

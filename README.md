@@ -34,7 +34,6 @@ products locally; this project will not distribute those rasters through GitHub.
 - [Narrative notebook](notebooks/psf_disaggregation_writeup.ipynb)
 - [Compact artifact package](artifacts/README.md)
 - [Data licenses, retrieval, and redistribution](docs/data-licenses.md)
-- [Pre-publication checklist](docs/publication-checklist.md)
 - [Citation metadata](CITATION.cff)
 
 ## Local setup
@@ -50,6 +49,29 @@ Earth Engine, Overture, and notebook dependencies are optional extras:
 ```bash
 .venv/bin/python -m pip install -e '.[earth-engine,overture,notebooks]'
 ```
+
+## Fresh-clone reproduction check
+
+The following commands exercise configuration loading, projected grid generation,
+the self-contained synthetic allocation operator, and COG raster output without
+private credentials or omitted source rasters:
+
+```bash
+.venv/bin/python -m nocturne.disaggregate.grids \
+  configs/psf_disaggregation.yaml
+.venv/bin/python -m nocturne.disaggregate.gate1 \
+  configs/psf_disaggregation.yaml --synthetic-only
+.venv/bin/python -m nocturne.disaggregate.day2 \
+  configs/psf_disaggregation.yaml
+```
+
+The synthetic Gate 1 run writes inspectable rasters beneath
+`outputs/psf_disaggregation/validation/gate1/synthetic_cog_bundle/`. The Day 2
+audit is also expected to succeed in a fresh clone, but its manifest reports
+`ready_for_two_city_operator_run: false` until the user supplies the documented
+10 m Earth Engine and Overture input bundles. Empirical city workflows require
+those locally ingested rasters; Earth Engine workflows additionally require the
+private runtime settings below.
 
 Earth Engine runs require private runtime settings. Export them in the shell;
 do not write their values into the committed configuration:
@@ -69,10 +91,11 @@ to claim that the public redacted file generated those products.
 
 ## Publication status
 
-This is a migration staging tree, not yet a public release. The analytical v2
-closeout is complete. Large-raster distribution is intentionally out of scope;
-fresh-clone reproduction and an optional archival DOI remain on the
-[pre-publication checklist](docs/publication-checklist.md).
+This is the initial public repository release. The analytical v2 closeout and
+fresh-clone software reproduction check are complete. Large-raster distribution
+is intentionally out of scope; an optional archival DOI and the remaining
+presentation review are recorded in the
+[review status](docs/psf-disaggregation-status.md).
 
 ## License
 

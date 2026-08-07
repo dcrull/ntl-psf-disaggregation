@@ -45,7 +45,11 @@ from nocturne.disaggregate.water import WATER_VARIANTS, build_water_proxy_varian
 from nocturne.preview.paths import resolve_project_path
 
 
-def run_gate1(config_path: str | Path) -> list[Path]:
+def run_gate1(
+    config_path: str | Path,
+    *,
+    synthetic_only: bool = False,
+) -> list[Path]:
     config = load_disaggregation_config(config_path)
     output_root = resolve_project_path(config["outputs"]["validation"]) / "gate1"
     output_root.mkdir(parents=True, exist_ok=True)
@@ -118,13 +122,19 @@ def run_gate1(config_path: str | Path) -> list[Path]:
     summary_csv = output_root / "synthetic_coastline_gate1_summary.csv"
     summary_table.to_csv(summary_csv, index=False)
 
-    representative_kernels = _representative_kernel_set(config_path, config)
+    representative_kernels = _representative_kernel_set(
+        config_path,
+        config,
+        include_native_footprints=not synthetic_only,
+    )
     payload = {
         "schema_version": 1,
         "experiment_id": config["experiment"]["id"],
         "contract_version": config["experiment"]["contract_version"],
         "config_sha256": disaggregation_config_sha256(config_path),
         "gate": "Gate 1",
+        "run_mode": "synthetic_only" if synthetic_only else "full_support_preview",
+        "native_vnp_footprints_included": not synthetic_only,
         "fixture": {
             "name": "bright_land_adjacent_water",
             "shape": list(fixture["radiance"].shape),
@@ -305,8 +315,16 @@ def main(argv: list[str] | None = None) -> int:
         description="Run Gate 1 synthetic operator invariants and visual diagnostics."
     )
     parser.add_argument("config", nargs="?", default="configs/psf_disaggregation.yaml")
+    parser.add_argument(
+        "--synthetic-only",
+        action="store_true",
+        help=(
+            "run the self-contained synthetic invariants and COG export without "
+            "Gate 0 sample artifacts or empirical native-footprint previews"
+        ),
+    )
     args = parser.parse_args(argv)
-    for path in run_gate1(args.config):
+    for path in run_gate1(args.config, synthetic_only=args.synthetic_only):
         print(path)
     return 0
 
@@ -330,6 +348,8 @@ def _operator_kwargs(config: dict[str, Any]) -> dict[str, float]:
 def _representative_kernel_set(
     config_path: str | Path,
     config: dict[str, Any],
+    *,
+    include_native_footprints: bool = True,
 ) -> dict[str, AllocationKernel]:
     kernels: dict[str, AllocationKernel] = {
         "Fork-form reference · 500 m radius": kernel_from_config(
@@ -337,50 +357,53 @@ def _representative_kernel_set(
             kernel_type="circular_mean",
         )
     }
-    grids = {grid.city_id: grid for grid in build_city_grid_specs(config_path)}
-    gate0_root = (
-        resolve_project_path(config["outputs"]["validation"])
-        / "gate0"
-        / config["validation"]["gate0"]["artifact_version"]
-    )
-    for city_id in config["cities"]["selected_city_ids"]:
-        samples_path = gate0_root / f"{city_id}_s2_only_samples.csv"
-        if not samples_path.exists():
-            raise FileNotFoundError(
-                f"Gate 1 native-footprint preview requires corrected Gate 0: {samples_path}"
+    if include_native_footprints:
+        grids = {grid.city_id: grid for grid in build_city_grid_specs(config_path)}
+        gate0_root = (
+            resolve_project_path(config["outputs"]["validation"])
+            / "gate0"
+            / config["validation"]["gate0"]["artifact_version"]
+        )
+        for city_id in config["cities"]["selected_city_ids"]:
+            samples_path = gate0_root / f"{city_id}_s2_only_samples.csv"
+            if not samples_path.exists():
+                raise FileNotFoundError(
+                    "Gate 1 native-footprint preview requires corrected Gate 0: "
+                    f"{samples_path}. Use --synthetic-only for the self-contained "
+                    "fresh-clone workflow."
+                )
+            samples = pd.read_csv(
+                samples_path,
+                usecols=[
+                    "coarse_cell_id",
+                    "coarse_cell_polygon_wkt",
+                    "radius_m",
+                ],
             )
-        samples = pd.read_csv(
-            samples_path,
-            usecols=[
-                "coarse_cell_id",
-                "coarse_cell_polygon_wkt",
-                "radius_m",
-            ],
-        )
-        row = samples.loc[samples["radius_m"].idxmin()]
-        polygon_wgs84 = shapely.from_wkt(row["coarse_cell_polygon_wkt"])
-        transformer = Transformer.from_crs(
-            "EPSG:4326",
-            grids[city_id].crs,
-            always_xy=True,
-        )
-        polygon_projected = shapely.transform(
-            polygon_wgs84,
-            transformer.transform,
-            interleaved=False,
-        )
-        centroid = shapely.centroid(polygon_projected)
-        local = affinity.translate(
-            polygon_projected,
-            xoff=-float(shapely.get_x(centroid)),
-            yoff=-float(shapely.get_y(centroid)),
-        )
-        kernels[f"{city_id} · representative native cell"] = kernel_from_config(
-            config,
-            kernel_type="native_vnp_footprint",
-            footprint=local,
-            footprint_id=str(row["coarse_cell_id"]),
-        )
+            row = samples.loc[samples["radius_m"].idxmin()]
+            polygon_wgs84 = shapely.from_wkt(row["coarse_cell_polygon_wkt"])
+            transformer = Transformer.from_crs(
+                "EPSG:4326",
+                grids[city_id].crs,
+                always_xy=True,
+            )
+            polygon_projected = shapely.transform(
+                polygon_wgs84,
+                transformer.transform,
+                interleaved=False,
+            )
+            centroid = shapely.centroid(polygon_projected)
+            local = affinity.translate(
+                polygon_projected,
+                xoff=-float(shapely.get_x(centroid)),
+                yoff=-float(shapely.get_y(centroid)),
+            )
+            kernels[f"{city_id} · representative native cell"] = kernel_from_config(
+                config,
+                kernel_type="native_vnp_footprint",
+                footprint=local,
+                footprint_id=str(row["coarse_cell_id"]),
+            )
     gaussian = next(
         item
         for item in config["kernels"]["sensitivities"]
@@ -548,7 +571,9 @@ def _write_kernel_figure(
     output_path: Path,
 ) -> None:
     figure, axes = plt.subplots(2, 3, figsize=(15, 9), constrained_layout=True)
-    for axis, (name, kernel) in zip(axes.flat, kernels.items(), strict=True):
+    used_axes = []
+    for axis, (name, kernel) in zip(axes.flat, kernels.items()):
+        used_axes.append(axis)
         weights = np.where(kernel.weights > 0, kernel.weights, np.nan)
         image = axis.imshow(weights, cmap="magma")
         axis.set_title(
@@ -558,6 +583,9 @@ def _write_kernel_figure(
         axis.set_xticks([])
         axis.set_yticks([])
         figure.colorbar(image, ax=axis, fraction=0.046, pad=0.02)
+    for axis in axes.flat:
+        if axis not in used_axes:
+            axis.axis("off")
     figure.suptitle(
         "Declared allocation supports — algorithmic sensitivities, not recovered PSFs",
         fontsize=15,

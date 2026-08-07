@@ -62,11 +62,12 @@ The v1 closeout remains an explicitly historical strict-QA snapshot.
 
 - The machine-readable v2 closeout still records final user presentation review
   of the two broad-QA built-form COGs as open. This does not block analytical
-  closeout, but it should be explicitly accepted before public release.
-- Data-license confirmation, citation metadata, and the local-only large-raster
-  policy are complete. Fresh-clone reproduction remains on
-  `publication-checklist.md`; source and derived-artifact terms are in
-  `data-licenses.md`.
+  closeout, but it should be explicitly accepted before a tagged release.
+- Data-license confirmation, citation metadata, the local-only large-raster
+  policy, and the credential-free fresh-clone reproduction check are complete.
+  Source and derived-artifact terms are in `data-licenses.md`. The optional DOI
+  and open presentation review are recorded here rather than in a separate
+  release checklist.
 - Several superseded, ignored working-output directories are not retained in
   the compact v2 workspace. Their results are recorded in the overview and
   decision ledger, while the accepted galleries are checksummed under

@@ -788,8 +788,20 @@ or exact asset ID and identify the corresponding local artifact.
 For the current Day 2 synthetic inspection, run:
 
 ```bash
-python -m nocturne.disaggregate.gate1 configs/psf_disaggregation.yaml
+python -m nocturne.disaggregate.gate1 \
+  configs/psf_disaggregation.yaml --synthetic-only
 python -m nocturne.disaggregate.day2 configs/psf_disaggregation.yaml
+```
+
+The `--synthetic-only` mode is the credential-free, fresh-clone reproduction
+path. It runs the complete synthetic coastline invariant matrix and writes the
+georeferenced COG bundle, but omits only the representative native-VNP-footprint
+support panels that depend on corrected Gate 0 sample artifacts. After those
+samples have been generated locally, rerun Gate 1 without the flag to include
+the empirical native-footprint support previews:
+
+```bash
+python -m nocturne.disaggregate.gate1 configs/psf_disaggregation.yaml
 ```
 
 To build the real 10 m Overture structure bundles before the input audit, run:
@@ -798,7 +810,7 @@ To build the real 10 m Overture structure bundles before the input audit, run:
 python -m nocturne.disaggregate.overture_bundle configs/psf_disaggregation.yaml
 ```
 
-The first command regenerates a browser gallery and individual COGs beneath
+The synthetic command regenerates a browser gallery and individual COGs beneath
 `gate1/synthetic_cog_bundle/`; open `allocation.tif`,
 `operator_consistency_error.tif`, and the support/mask layers in QGIS to
 inspect their grid and nodata behavior. Their EPSG:32618 coordinates are an
@@ -1218,7 +1230,8 @@ The research-note evidence synthesis is `docs/psf-disaggregation-results.md`.
 The detailed public narrative is `notebooks/psf_disaggregation_writeup.ipynb`,
 and the accompanying blog is
 <https://daynan.com/at-the-edge/measuring-lights-at-night/>. Remaining repository
-release tasks are tracked separately in `docs/publication-checklist.md`.
+release notes, including the optional DOI and open presentation review, are
+tracked in `docs/psf-disaggregation-status.md`.
 
 ## Named failure modes
 
