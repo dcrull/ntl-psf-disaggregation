@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "psf_disaggregation_empirical_cutout_galleries_v1",
+  "accepted_date": "2026-07-29",
+  "role": "blog_and_research_note_empirical_operator_preflight",
+  "display_only": true,
+  "visual_review": "accepted_no_obvious_anomalies",
+  "config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "source_artifact_manifest_sha256": "62d066f221f41a95e7169ab123774aca47097b6c7eedb292b6b164314260463c",
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "d89cbf4c2eed0537f2115262013036d9ce437be4d34c942c010e3e83f677d443"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "cb2af9aa5e0632d89608110b0af81d3d0815cb078e2b18fe85556ca01abad905"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "d8b2dfd8a3a29f0a2e44030ff517ed62ed5829b6c938b31b8a41a7c53cb0b039"
+    },
+    {
+      "path": "usa_new_york/dense_building/inspection.png",
+      "sha256": "c2a75df140df2394a4b16d24f32e375f7318210d644352419cd4be12d0e37f83"
+    },
+    {
+      "path": "usa_new_york/sparse_built/inspection.png",
+      "sha256": "0bfa14f8f310c1d360db06c5f8cc87ce8d0061be0faaf8b5b3c89719f9c0e6a4"
+    },
+    {
+      "path": "usa_new_york/water_adjacent_infrastructure/inspection.png",
+      "sha256": "180250ec8dce77539bf60e0a858446785e809ea774a6f8c8680f5239b753c1a3"
+    },
+    {
+      "path": "india_delhi/dense_building/inspection.png",
+      "sha256": "84e867f163c6ee5cf20ea123d3ee97aae4f1ff096caf5b45f298a30e21f231fb"
+    },
+    {
+      "path": "india_delhi/sparse_built/inspection.png",
+      "sha256": "b8c0f6025decbb74a02b4e07e6e725fe9ae1e1e8bb592974d61ecd63e22751c7"
+    },
+    {
+      "path": "india_delhi/water_adjacent_infrastructure/inspection.png",
+      "sha256": "a7d2438b47f451e07a5a9c09cbc1fe995f57f1adc6dd6cfcc905190bb6fb10c3"
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+experiment:
+  id: psf_disaggregation
+  description: Fork-form locally normalized radiance allocation for NYC and Delhi.
+  schema_version: 2
+  contract_version: integrity_v3
+
+cities:
+  source_config: configs/first_experiment.yaml
+  selected_city_ids:
+    - usa_new_york
+    - india_delhi
+  analysis_geometry:
+    decision_id: AOI-001
+    type: projected_square
+    side_length_km: 50.0
+    center_snap_to_grid: true
+    source_halo_m: 1000
+
+date_window:
+  decision_id: WINDOW-001
+  center: "2024-03-01"
+  start: "2024-01-11"
+  end_exclusive: "2024-04-20"
+
+grid:
+  decision_id: GRID-001
+  resolution_m: 10
+  crs_strategy: per_city_utm
+  align_to_resolution: true
+  continuous_resampling:
+    decision_id: RESAMPLE-001
+    method: bilinear
+  categorical_resampling:
+    decision_id: RESAMPLE-001
+    method: nearest
+
+earth_engine:
+  # Runtime identity is intentionally absent from the public configuration.
+  project: null
+  project_env: NTL_PSF_EE_PROJECT
+  interactive_request_deadline_ms: 300000
+  export:
+    destination: drive
+    drive_folder: null
+    drive_folder_env: NTL_PSF_EE_DRIVE_FOLDER
+    file_format: GeoTIFF
+    cloud_optimized: true
+    max_pixels: 10000000000000
+    region_edge_inset_m: 0.01
+
+sources:
+  sentinel2:
+    composite_decision_id: S2-COMPOSITE-001
+    collection: COPERNICUS/S2_SR_HARMONIZED
+    bands:
+      - B2
+      - B3
+      - B4
+      - B8
+      - B11
+      - B12
+    reflectance_scale: 0.0001
+    cloud_score:
+      decision_id: CLOUD-001
+      collection: GOOGLE/CLOUD_SCORE_PLUS/V1/S2_HARMONIZED
+      qa_band: cs_cdf
+      clear_threshold: 0.60
+      sensitivity_thresholds:
+        - 0.50
+        - 0.70
+    composite_method: index_of_bandwise_temporal_medians_after_datatake_mosaic
+    effective_resolution_m:
+      visible_nir: 10
+      swir_and_swir_indices: 20
+    minimum_common_valid_observations: 5
+    common_valid_observation_sensitivities:
+      - 2
+      - 10
+    scl_excluded_classes:
+      - 1
+      - 3
+      - 8
+      - 9
+      - 10
+      - 11
+  vnp46a2:
+    quality_decision_id: VNP-QA-001
+    collection: NASA/VIIRS/002/VNP46A2
+    target_band: DNB_BRDF_Corrected_NTL
+    fallback_band: Gap_Filled_DNB_BRDF_Corrected_NTL
+    retained_bands:
+      - DNB_BRDF_Corrected_NTL
+      - Gap_Filled_DNB_BRDF_Corrected_NTL
+      - DNB_Lunar_Irradiance
+      - Latest_High_Quality_Retrieval
+      - Mandatory_Quality_Flag
+      - QF_Cloud_Mask
+      - Snow_Flag
+    quality_contracts:
+      primary:
+        description: Strict high-quality, clear, snow-free nighttime corrected radiance.
+        mandatory_quality_values:
+          - 0
+        cloud_detection_values:
+          - 0
+          - 1
+        minimum_cloud_mask_quality: 2
+        require_night: true
+        exclude_shadow: true
+        exclude_cirrus: true
+        require_snow_free: true
+        minimum_valid_observations: 10
+      broad_sensitivity:
+        description: Sensitivity retaining MQF 1 despite the NASA/catalog metadata discrepancy.
+        mandatory_quality_values:
+          - 0
+          - 1
+        cloud_detection_values:
+          - 0
+          - 1
+        minimum_cloud_mask_quality: 1
+        require_night: true
+        exclude_shadow: true
+        exclude_cirrus: true
+        require_snow_free: true
+        minimum_valid_observations: 5
+        downstream_analysis:
+          mode: targeted_reference_configuration
+          include_in_full_factorial: false
+          city_ids:
+            - usa_new_york
+          allocation_proxy: built_form_primary
+          kernel: circular_mean_reference
+          water_variant: combined_soft
+          purpose: quantify_effect_of_strict_qa_support_gap
+    gap_filled_sensitivity:
+      decision_id: VNP-COVERAGE-001
+      description: Recent gap-filled radiance sensitivity; never a silent replacement for corrected radiance.
+      maximum_retrieval_age_days: 30
+      retrieval_age_sensitivities_days:
+        - 7
+        - 30
+        - 90
+      minimum_recent_days: 10
+      automatic_primary_replacement: false
+      repeated_daily_values_are_independent_retrievals: false
+  water:
+    decision_id: WATER-001
+    collection: JRC/GSW1_4/GlobalSurfaceWater
+    band: occurrence
+    metadata_collection: JRC/GSW1_4/Metadata
+    valid_observations_band: valid_obs
+    temporal_coverage: 1984-2021
+    native_resolution_m: 30
+    resampling_method: nearest
+    persistent_occurrence_threshold: 90
+
+allocation_proxies:
+  decision_id: PROXY-001
+  variants:
+    - direct_upsample
+    - uniform_normalized_convolution
+    - built_form_primary
+    - s2_only_ablation
+  s2_only:
+    decision_id: PROXY-FORMULA-001
+    ndbi_unit_scale:
+      minimum: -0.25
+      maximum: 0.35
+    ndvi_vegetation_unit_scale:
+      minimum: 0.20
+      maximum: 0.80
+    mndwi_water_unit_scale:
+      minimum: 0.00
+      maximum: 0.50
+  built_form:
+    decision_id: PROXY-FORMULA-001
+    preferred_buildings: overture
+    fallback_buildings: osm
+    roads: overture
+    overture_input_root: outputs/psf_disaggregation/inputs/overture
+    overture_release: "2026-07-22.0"
+    temporal_semantics: contemporary_structural_proxy_used_to_allocate_2024_radiance
+    building_weight: 0.70
+    road_weight: 0.30
+    building_fraction_transform: sqrt
+    road_density_saturation_m_per_km2: 20000
+    road_density_sensitivity_m_per_km2:
+      - 10000
+      - 30000
+    unlisted_road_class_policy: error
+    rasterization:
+      decision_id: OVERTURE-RASTER-001
+      source_crs: EPSG:4326
+      building_fraction:
+        method: binary_union_subpixel_center_sampling
+        subpixel_resolution_m: 2
+        cutout_sensitivity_resolution_m: 1
+        overlap_policy: union
+        invalid_geometry_policy: make_valid_then_polygon_parts
+      weighted_road_length:
+        method: segmentized_midpoint_length_allocation
+        maximum_segment_length_m: 1
+        cutout_sensitivity_maximum_segment_length_m: 0.5
+        overlap_policy: additive_centerline_length
+        assumed_road_width_m: null
+        length_conservation_relative_tolerance: 0.0001
+      cutout_sensitivity:
+        size_m: 1000
+        selection_method: nonradiance_aligned_block_extremes
+        roles:
+          - dense_building
+          - sparse_built
+          - water_adjacent_infrastructure
+        sparse_minimum_infrastructure_fraction: 0.05
+        uses_vnp_radiance: false
+        retain_full_sensitivity_rasters: false
+      output_overview_resampling: nearest
+    road_class_weights:
+      motorway: 1.00
+      trunk: 1.00
+      primary: 1.00
+      secondary: 0.85
+      tertiary: 0.70
+      residential: 0.55
+      living_street: 0.50
+      service: 0.35
+      pedestrian: 0.25
+      unclassified: 0.40
+      unknown: 0.25
+      footway: 0.20
+      path: 0.15
+      track: 0.15
+      steps: 0.15
+      cycleway: 0.20
+      bridleway: 0.10
+  minimum_valid_value: 0.0
+  normalization_decision_id: NORMALIZATION-001
+  common_normalization: mean_one_over_finite_analysis_support
+  denominator_epsilon_relative: 0.000001
+
+kernels:
+  reference:
+    decision_id: KERNEL-001
+    type: circular_mean
+    radius_m: 500
+    semantics: literal_fork_form_reference_not_measured_viirs_psf
+  sensitivities:
+    - type: native_vnp_footprint
+      priority: major
+      semantics: actual_15_arcsecond_source_cell_polygon
+    - type: gaussian
+      parameter: fwhm_m
+      truncate_sigma: 4.0
+      values:
+        - 750
+        - 1000
+        - 1500
+
+validation:
+  water_handling:
+    decision_id: WATER-001
+    never_mask_vnp_authority: true
+    water_is_output_nodata: false
+    primary_variant: combined_soft
+    variants:
+      - no_water_prior
+      - persistent_only_soft
+      - spectral_only_soft
+      - combined_soft
+      - combined_hard_persistent_sensitivity_only
+      - soft_with_mapped_infrastructure_override
+    proxy_floor: 0.05
+    shoreline_distance_edges_m:
+      - 0
+      - 100
+      - 500
+      - 1500
+    hard_mask_headline_eligible: false
+    automatic_primary_replacement: false
+  gate0:
+    decision_id: GATE0-001
+    artifact_version: v3_qa_grid_halo_datatake_support
+    interactive_chunk_divisions: 4
+    interactive_workers: 4
+    interactive_chunk_attempts: 3
+    aggregation_halo_m: 1000
+    spatial_block_size_m: 5000
+    detrend: radial_distance_to_city_center
+    minimum_citywide_spearman: 0.25
+    minimum_block_spearman: 0.20
+    minimum_detrended_spearman: 0.10
+    s2_coarse_support_decision_id: S2-SUPPORT-001
+    minimum_s2_coarse_support_fraction: 0.90
+    maximum_insufficient_proxy_fraction: 0.05
+    insufficient_proxy_mean_threshold: 0.05
+    minimum_land_weight_for_support: 0.10
+  gate1:
+    decision_id: OPERATOR-NUMERICS-001
+    minimum_valid_kernel_support_fraction: 1.0
+    support_fraction_tolerance: 0.000001
+    edge_padding: constant_invalid
+    proxy_normalization: mean_one_over_finite_analysis_support
+    denominator_epsilon_reference: normalized_proxy_mean
+    negative_radiance_policy: retain_in_numerator_then_clip_negative_output_after_recording
+    output_nodata: nan
+  heldout:
+    fold_count: 5
+    buffer_by_kernel_support: true
+    baseline: neighbors_only_interpolation
+  observation_conditions:
+    retain_daily_vnp: true
+  operator_interpretation:
+    decision_id: CONSERVATION-001
+    primary_name: fork_form_locally_normalized_radiance_allocation
+    exact_conservation_is_assumed: false
+    maximum_error_for_conserving_language: null
+  sdgsat_feasibility_timebox_minutes: 90
+
+outputs:
+  root: outputs/psf_disaggregation
+  manifests: outputs/psf_disaggregation/manifests
+  previews: outputs/psf_disaggregation/previews
+  rasters: outputs/psf_disaggregation/rasters
+  diagnostics: outputs/psf_disaggregation/diagnostics
+  validation: outputs/psf_disaggregation/validation
+  figures: outputs/psf_disaggregation/figures
+  day2_inputs:
+    artifact_version: v2_vnp_coverage_diagnostics
+    root: outputs/psf_disaggregation/rasters/day2_inputs
+    earth_engine_bundle_filename: ee_source_bundle.tif
+    earth_engine_bands:
+      - vnp_median_corrected_radiance
+      - vnp_valid_observation_count
+      - vnp_source_observation_count
+      - vnp_quality_rejected_observation_count
+      - vnp_quality_retained_fraction
+      - vnp_broad_median_corrected_radiance
+      - vnp_broad_valid_observation_count
+      - vnp_gap_filled_recent7d_median_radiance
+      - vnp_gap_filled_recent7d_day_count
+      - vnp_gap_filled_recent30d_median_radiance
+      - vnp_gap_filled_recent30d_day_count
+      - vnp_gap_filled_recent90d_median_radiance
+      - vnp_gap_filled_recent90d_day_count
+      - vnp_gap_filled_source_observation_count
+      - vnp_fresh_high_quality_retrieval_count
+      - vnp_latest_high_quality_retrieval_days_median
+      - vnp_latest_high_quality_retrieval_days_p90
+      - s2_base_proxy_unwatered_unfloored
+      - s2_spectral_water_weight
+      - s2_common_valid_observation_count
+      - s2_sufficient_observation_support
+      - persistent_water_occurrence_percent
+      - persistent_water_valid_observation_count
+      - persistent_water_observation_support
+      - persistent_water_weight
+      - persistent_water_mask
+    overture_bundle_filename: overture_structure_bundle.tif
+    overture_bands:
+      - building_fraction
+      - weighted_road_density_normalized
+      - built_form_base_proxy_unwatered_unfloored
+      - mapped_infrastructure_mask

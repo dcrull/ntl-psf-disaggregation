@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ntl-psf-disaggregation"
+version = "0.1.0"
+description = "PSF-aware structural allocation of nighttime-light radiance."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dependencies = [
+  "affine>=2.4",
+  "matplotlib>=3.8",
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "pyarrow>=16.0",
+  "pyproj>=3.6",
+  "PyYAML>=6.0",
+  "rasterio>=1.3",
+  "scipy>=1.13",
+  "shapely>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pre-commit>=4.6",
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+earth-engine = [
+  "earthengine-api>=1.0",
+]
+overture = [
+  "overturemaps>=1.0",
+]
+notebooks = [
+  "ipykernel>=6.29",
+  "jupyterlab>=4.2",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

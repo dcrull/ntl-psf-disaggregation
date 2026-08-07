@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "decision_id": "WATER-002",
+  "decision_date": "2026-07-30",
+  "status": "accepted_for_reporting",
+  "reporting_primary_water_variant": "no_water_prior",
+  "preregistered_primary_water_variant": "combined_soft",
+  "configuration_policy": "preserve_frozen_preregistered_configuration_and_hash",
+  "frozen_config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "scope": {
+    "proxy_variants": [
+      "built_form_primary",
+      "s2_only_ablation"
+    ],
+    "kernel": "circular_mean_reference",
+    "radiance_contract": "strict"
+  },
+  "rationale": [
+    "the corrected VNP observation remains the radiometric authority",
+    "water-specific weighting imposes an origin assumption not established by the observation",
+    "Gate 2 found material and proxy-dependent shoreline redistribution",
+    "similar ambiguity exists at other low-proxy boundaries",
+    "no independent high-resolution nighttime reference currently establishes that water weighting improves allocation accuracy"
+  ],
+  "interpretation": "No-water-prior is the simplest structural allocation and the reporting primary. Water-weighted variants remain sensitivity analyses and negative controls.",
+  "prohibitions": [
+    "do not describe no-water-prior as preregistered",
+    "do not describe combined-soft as disproven",
+    "do not select a water variant from allocated-water radiance alone",
+    "do not overwrite or relabel frozen completed artifacts"
+  ],
+  "evidence": {
+    "shoreline_manifest": {
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/manifest.json",
+      "sha256": "48bd4ce711ca4fa3030ac998663b98d9eb7336bc4c0df1d9a659b957033fccac"
+    },
+    "sensitivity_manifest": {
+      "path": "outputs/psf_disaggregation/validation/gate2/sensitivity/v1_full_city_sensitivity/manifest.json",
+      "sha256": "6314089d1d5a0f8818bf915df12d6c0e72caa985b4e2e7bb8d92e1e35c8c86ff"
+    }
+  },
+  "selected_artifacts": [
+    {
+      "city_id": "usa_new_york",
+      "proxy": "built_form_primary",
+      "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/usa_new_york/built_form_primary__no_water_prior__circular_mean_reference/products.tif",
+      "sha256": "ef81d5d75c815d093b9fb5937d1e2a79a49837fd1041b166ac5abc3f6cf4012b"
+    },
+    {
+      "city_id": "usa_new_york",
+      "proxy": "s2_only_ablation",
+      "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/usa_new_york/s2_only_ablation__no_water_prior__circular_mean_reference/products.tif",
+      "sha256": "dde803d37ff4dc47f2bc0c4bd535f2b3cfd1932e72d4bedd953aa130485186a7"
+    },
+    {
+      "city_id": "india_delhi",
+      "proxy": "built_form_primary",
+      "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/india_delhi/built_form_primary__no_water_prior__circular_mean_reference/products.tif",
+      "sha256": "ce57eabe3a0e55109a3c5a62a6298e9578cda9005d9e87966835845cd4ff722c"
+    },
+    {
+      "city_id": "india_delhi",
+      "proxy": "s2_only_ablation",
+      "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/india_delhi/s2_only_ablation__no_water_prior__circular_mean_reference/products.tif",
+      "sha256": "3b2d1246310a30731d3c474e383ccaddd5f920139f170f1a79b846ea6cf7383a"
+    }
+  ]
+}

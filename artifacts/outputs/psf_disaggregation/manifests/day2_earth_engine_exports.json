@@ -1,0 +1,132 @@
+{
+  "artifact_version": "v2_vnp_coverage_diagnostics",
+  "config_sha256": "6bef78ccd919331f1a2ee42182c824a14a091313d3f009d13ecb6e954c975f22",
+  "contract_version": "integrity_v3",
+  "created_at_utc": "2026-07-29T01:00:48.464368+00:00",
+  "destination": "google_drive",
+  "experiment_id": "psf_disaggregation",
+  "export_region_edge_inset_m": 0.01,
+  "public_release_redactions": [
+    "exports[].drive_folder",
+    "exports[].task_id"
+  ],
+  "exports": [
+    {
+      "artifact_version": "v2_vnp_coverage_diagnostics",
+      "bands": [
+        "vnp_median_corrected_radiance",
+        "vnp_valid_observation_count",
+        "vnp_source_observation_count",
+        "vnp_quality_rejected_observation_count",
+        "vnp_quality_retained_fraction",
+        "vnp_broad_median_corrected_radiance",
+        "vnp_broad_valid_observation_count",
+        "vnp_gap_filled_recent7d_median_radiance",
+        "vnp_gap_filled_recent7d_day_count",
+        "vnp_gap_filled_recent30d_median_radiance",
+        "vnp_gap_filled_recent30d_day_count",
+        "vnp_gap_filled_recent90d_median_radiance",
+        "vnp_gap_filled_recent90d_day_count",
+        "vnp_gap_filled_source_observation_count",
+        "vnp_fresh_high_quality_retrieval_count",
+        "vnp_latest_high_quality_retrieval_days_median",
+        "vnp_latest_high_quality_retrieval_days_p90",
+        "s2_base_proxy_unwatered_unfloored",
+        "s2_spectral_water_weight",
+        "s2_common_valid_observation_count",
+        "s2_sufficient_observation_support",
+        "persistent_water_occurrence_percent",
+        "persistent_water_valid_observation_count",
+        "persistent_water_observation_support",
+        "persistent_water_weight",
+        "persistent_water_mask"
+      ],
+      "city_id": "usa_new_york",
+      "crs": "EPSG:32618",
+      "description": "nocturne_day2_usa_new_york_v2_vnp_coverage_diagnostics_6bef78ccd9",
+      "drive_filename": "usa_new_york_ee_source_bundle_v2_vnp_coverage_diagnostics.tif",
+      "drive_folder": null,
+      "local_expected_path": "outputs/psf_disaggregation/rasters/day2_inputs/usa_new_york/ee_source_bundle.tif",
+      "shape": [
+        5200,
+        5200
+      ],
+      "source_halo_m": 1000.0,
+      "task_id": null,
+      "task_state": "READY",
+      "transform": [
+        10,
+        0.0,
+        557960.0,
+        0.0,
+        -10,
+        4533350.0
+      ]
+    },
+    {
+      "artifact_version": "v2_vnp_coverage_diagnostics",
+      "bands": [
+        "vnp_median_corrected_radiance",
+        "vnp_valid_observation_count",
+        "vnp_source_observation_count",
+        "vnp_quality_rejected_observation_count",
+        "vnp_quality_retained_fraction",
+        "vnp_broad_median_corrected_radiance",
+        "vnp_broad_valid_observation_count",
+        "vnp_gap_filled_recent7d_median_radiance",
+        "vnp_gap_filled_recent7d_day_count",
+        "vnp_gap_filled_recent30d_median_radiance",
+        "vnp_gap_filled_recent30d_day_count",
+        "vnp_gap_filled_recent90d_median_radiance",
+        "vnp_gap_filled_recent90d_day_count",
+        "vnp_gap_filled_source_observation_count",
+        "vnp_fresh_high_quality_retrieval_count",
+        "vnp_latest_high_quality_retrieval_days_median",
+        "vnp_latest_high_quality_retrieval_days_p90",
+        "s2_base_proxy_unwatered_unfloored",
+        "s2_spectral_water_weight",
+        "s2_common_valid_observation_count",
+        "s2_sufficient_observation_support",
+        "persistent_water_occurrence_percent",
+        "persistent_water_valid_observation_count",
+        "persistent_water_observation_support",
+        "persistent_water_weight",
+        "persistent_water_mask"
+      ],
+      "city_id": "india_delhi",
+      "crs": "EPSG:32643",
+      "description": "nocturne_day2_india_delhi_v2_vnp_coverage_diagnostics_6bef78ccd9",
+      "drive_filename": "india_delhi_ee_source_bundle_v2_vnp_coverage_diagnostics.tif",
+      "drive_folder": null,
+      "local_expected_path": "outputs/psf_disaggregation/rasters/day2_inputs/india_delhi/ee_source_bundle.tif",
+      "shape": [
+        5200,
+        5200
+      ],
+      "source_halo_m": 1000.0,
+      "task_id": null,
+      "task_state": "READY",
+      "transform": [
+        10,
+        0.0,
+        689980.0,
+        0.0,
+        -10,
+        3193200.0
+      ]
+    }
+  ],
+  "nodata": -9999.0,
+  "resampling_contract": {
+    "categorical_masks_counts_and_jrc": "nearest",
+    "s2_continuous": "bilinear",
+    "vnp_radiance_bilinear": "retained_for_later_sensitivity_not_this_bundle",
+    "vnp_radiance_primary": "nearest"
+  },
+  "schema_version": 1,
+  "tasks_started": true,
+  "water_contract": {
+    "changes_vnp_authority": false,
+    "persistent_mask_is_operator_input_not_output_nodata": true
+  }
+}

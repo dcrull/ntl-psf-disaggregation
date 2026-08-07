@@ -1,0 +1,45 @@
+{
+  "analytical_closeout_complete": true,
+  "artifact_version": "v2_broad_qa_reporting",
+  "classification": "coverage_complete_bounded_method_result",
+  "config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "created_at_utc": "2026-08-03T14:38:34.490284+00:00",
+  "outputs": {
+    "evidence_classification": {
+      "path": "outputs/psf_disaggregation/validation/gate2/closeout/v2_broad_qa_reporting/evidence_classification.json",
+      "sha256": "580d2faadb775182c6e84f8220ca0e05d50da98e9ee768e0877091551383364e"
+    },
+    "headline_metrics": {
+      "path": "outputs/psf_disaggregation/validation/gate2/closeout/v2_broad_qa_reporting/headline_metrics.csv",
+      "sha256": "b3a33263def806665df592f1d0e3f5dcbe031ebff93982793d2f6cc270756b88"
+    },
+    "review": {
+      "path": "outputs/psf_disaggregation/validation/gate2/closeout/v2_broad_qa_reporting/review.md",
+      "sha256": "ac26b0336723e1b4d389b661c0ddbfbbb3a6358592f437e89b507d4ab29b2a58"
+    }
+  },
+  "schema_version": 1,
+  "sources": {
+    "broad_audit": {
+      "path": "outputs/psf_disaggregation/validation/gate2/broad_reporting/v1_coverage_and_water_inland/manifest.json",
+      "sha256": "5e6d27e95a357e9b94d0cb5000703a555907bb7368d7b28fb8e55de6d7fd3631"
+    },
+    "broad_heldout": {
+      "path": "outputs/psf_disaggregation/validation/gate2/heldout/v3_physics_buffered_native_cell_broad_qa/manifest.json",
+      "sha256": "05d105390fd48e50bfe39137daa4385e2d28da2f5c0ce51686918aa26e461d7f"
+    },
+    "broad_products": {
+      "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/artifact_manifest.json",
+      "sha256": "8ebcadbaf5957276877786db6c30a2a391c3971372ffa5aeb4d621161ac8ab51"
+    },
+    "reporting_selection": {
+      "path": "outputs/psf_disaggregation/validation/gate2/primary_selection/v2_broad_qa_reporting/selection.json",
+      "sha256": "64b44498aefe9aa94b5cf88c406b1a25a0ffff876dd6c677e3347bca3488dadc"
+    },
+    "strict_observation_conditions": {
+      "path": "outputs/psf_disaggregation/validation/gate2/observation_conditions/v1_daily_coarse_operator/manifest.json",
+      "sha256": "520190567e817a0de7d748b92559789d985de33760d4cb5f3eb4eb168356fb54"
+    }
+  },
+  "visual_review_complete": false
+}

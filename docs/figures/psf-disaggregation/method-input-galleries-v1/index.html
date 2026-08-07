@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nocturne Day 2 source bundles</title>
+<style>
+body { margin: 2rem; color: #202124; background: #f8f9fa; font: 15px system-ui; }
+main { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
+figure { margin: 0; padding: 1rem; background: white; border: 1px solid #dadce0; }
+img { display: block; width: 100%; height: auto; }
+figcaption { margin-top: .6rem; }
+</style>
+</head>
+<body>
+<h1>Day 2 Earth Engine source-bundle inspection</h1>
+<p>Display overviews use average or nearest-neighbor resampling and percentile
+stretches only for visualization. They do not modify the source rasters. A grid
+failure quarantines that source from the allocation operator.</p>
+<main><figure><h2>usa_new_york · grid PASS</h2><img src="usa_new_york_ee_source_bundle.png"><img src="usa_new_york_vnp_coverage.png"><img src="usa_new_york_overture_structure.png"><figcaption>actual [5200, 5200] · expected [5200, 5200]</figcaption></figure>
+<figure><h2>india_delhi · grid PASS</h2><img src="india_delhi_ee_source_bundle.png"><img src="india_delhi_vnp_coverage.png"><img src="india_delhi_overture_structure.png"><figcaption>actual [5200, 5200] · expected [5200, 5200]</figcaption></figure></main>
+</body>
+</html>

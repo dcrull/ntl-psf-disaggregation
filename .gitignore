@@ -1,0 +1,27 @@
+# python and notebooks
+.venv
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints
+**.DS_Store
+
+# generated data and experiment outputs
+/data/
+/outputs/
+/archive/
+
+
+# source tests are versioned; the broad patterns above only cover generated
+# third-party/test-data directories elsewhere in the tree
+!tests/
+!tests/**
+tests/**/__pycache__/
+tests/**/*.pyc
+
+# credentials and secrets
+*.env
+
+#GQIS
+*.qgz

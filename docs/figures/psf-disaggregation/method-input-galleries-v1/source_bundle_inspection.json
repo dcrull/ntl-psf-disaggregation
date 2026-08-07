@@ -1,0 +1,351 @@
+{
+  "created_at_utc": "2026-07-29T03:55:39.142331+00:00",
+  "display_contract": "overview resampling and percentile stretches are for visual inspection only; source rasters are not modified",
+  "schema_version": 1,
+  "sources": [
+    {
+      "actual_crs": "EPSG:32618",
+      "actual_shape": [
+        5200,
+        5200
+      ],
+      "actual_transform": [
+        10.0,
+        0.0,
+        557960.0,
+        0.0,
+        -10.0,
+        4533350.0
+      ],
+      "band_descriptions": [
+        "vnp_median_corrected_radiance",
+        "vnp_valid_observation_count",
+        "vnp_source_observation_count",
+        "vnp_quality_rejected_observation_count",
+        "vnp_quality_retained_fraction",
+        "vnp_broad_median_corrected_radiance",
+        "vnp_broad_valid_observation_count",
+        "vnp_gap_filled_recent7d_median_radiance",
+        "vnp_gap_filled_recent7d_day_count",
+        "vnp_gap_filled_recent30d_median_radiance",
+        "vnp_gap_filled_recent30d_day_count",
+        "vnp_gap_filled_recent90d_median_radiance",
+        "vnp_gap_filled_recent90d_day_count",
+        "vnp_gap_filled_source_observation_count",
+        "vnp_fresh_high_quality_retrieval_count",
+        "vnp_latest_high_quality_retrieval_days_median",
+        "vnp_latest_high_quality_retrieval_days_p90",
+        "s2_base_proxy_unwatered_unfloored",
+        "s2_spectral_water_weight",
+        "s2_common_valid_observation_count",
+        "s2_sufficient_observation_support",
+        "persistent_water_occurrence_percent",
+        "persistent_water_valid_observation_count",
+        "persistent_water_observation_support",
+        "persistent_water_weight",
+        "persistent_water_mask"
+      ],
+      "bands": [
+        {
+          "band": "vnp_median_corrected_radiance",
+          "display_mode": "log",
+          "maximum": 747.8594360351562,
+          "median": 34.19977951049805,
+          "minimum": 0.6577363014221191,
+          "valid_overview_pixels": 1208725
+        },
+        {
+          "band": "vnp_valid_observation_count",
+          "display_mode": "linear",
+          "maximum": 49.0,
+          "median": 34.0,
+          "minimum": 5.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "s2_base_proxy_unwatered_unfloored",
+          "display_mode": "linear",
+          "maximum": 1.0,
+          "median": 0.3066651225090027,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1196365
+        },
+        {
+          "band": "s2_spectral_water_weight",
+          "display_mode": "linear",
+          "maximum": 1.0,
+          "median": 1.0,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1196365
+        },
+        {
+          "band": "s2_common_valid_observation_count",
+          "display_mode": "linear",
+          "maximum": 18.0,
+          "median": 9.331360816955566,
+          "minimum": 1.591715931892395,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "s2_sufficient_observation_support",
+          "display_mode": "binary",
+          "maximum": 1.0,
+          "median": 1.0,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "persistent_water_occurrence_percent",
+          "display_mode": "linear",
+          "maximum": 99.65088653564453,
+          "median": 0.0,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "persistent_water_weight",
+          "display_mode": "linear",
+          "maximum": 1.0,
+          "median": 1.0,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "persistent_water_mask",
+          "display_mode": "binary",
+          "maximum": 1.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1210000
+        }
+      ],
+      "city_id": "usa_new_york",
+      "cog_layout": "COG",
+      "crs_valid": true,
+      "expected_crs": "EPSG:32618",
+      "expected_shape": [
+        5200,
+        5200
+      ],
+      "expected_transform": [
+        10,
+        0.0,
+        557960.0,
+        0.0,
+        -10,
+        4533350.0
+      ],
+      "grid_contract_valid": true,
+      "nodata": -9999.0,
+      "overture_preview_path": "outputs/psf_disaggregation/previews/day2_sources/usa_new_york_overture_structure.png",
+      "overture_source_path": "outputs/psf_disaggregation/rasters/day2_inputs/usa_new_york/overture_structure_bundle.tif",
+      "preview_path": "outputs/psf_disaggregation/previews/day2_sources/usa_new_york_ee_source_bundle.png",
+      "shape_valid": true,
+      "source_path": "drafts/usa_new_york_ee_source_bundle_v2_vnp_coverage_diagnostics.tif",
+      "transform_valid": true,
+      "vnp_coverage_preview_path": "outputs/psf_disaggregation/previews/day2_sources/usa_new_york_vnp_coverage.png",
+      "vnp_qa_comparison": {
+        "analysis_pixel_count": 25000000,
+        "analysis_shape": [
+          5000,
+          5000
+        ],
+        "analysis_support": "core_square_excluding_source_halo",
+        "broad_coverage_fraction": 1.0,
+        "broad_only_area_km2": 2.9269000000000003,
+        "broad_only_coverage_fraction": 0.00117076,
+        "broad_only_support": {
+          "jrc_zero_occurrence_fraction": 0.4541323584680037,
+          "mean_broad_observation_count": 8.436673613721002,
+          "mean_jrc_water_occurrence_percent": 40.170863370801875,
+          "mean_source_observation_count": 14.263555297413646,
+          "mean_strict_observation_count": 7.162082749666883,
+          "persistent_water_mask_fraction": 0.3431275410844238,
+          "pixel_count": 29269
+        },
+        "common_coverage_fraction": 0.99882924,
+        "common_support": {
+          "broad_mean_radiance": 43.57804025635065,
+          "broad_minus_strict_mean_radiance": -1.126272054105995,
+          "mean_absolute_difference": 1.467943195456803,
+          "pearson_correlation": 0.9974640483377603,
+          "pixel_count": 24970731,
+          "strict_mean_radiance": 44.70431231045663
+        },
+        "strict_primary_coverage_fraction": 0.99882924
+      }
+    },
+    {
+      "actual_crs": "EPSG:32643",
+      "actual_shape": [
+        5200,
+        5200
+      ],
+      "actual_transform": [
+        10.0,
+        0.0,
+        689980.0,
+        0.0,
+        -10.0,
+        3193200.0
+      ],
+      "band_descriptions": [
+        "vnp_median_corrected_radiance",
+        "vnp_valid_observation_count",
+        "vnp_source_observation_count",
+        "vnp_quality_rejected_observation_count",
+        "vnp_quality_retained_fraction",
+        "vnp_broad_median_corrected_radiance",
+        "vnp_broad_valid_observation_count",
+        "vnp_gap_filled_recent7d_median_radiance",
+        "vnp_gap_filled_recent7d_day_count",
+        "vnp_gap_filled_recent30d_median_radiance",
+        "vnp_gap_filled_recent30d_day_count",
+        "vnp_gap_filled_recent90d_median_radiance",
+        "vnp_gap_filled_recent90d_day_count",
+        "vnp_gap_filled_source_observation_count",
+        "vnp_fresh_high_quality_retrieval_count",
+        "vnp_latest_high_quality_retrieval_days_median",
+        "vnp_latest_high_quality_retrieval_days_p90",
+        "s2_base_proxy_unwatered_unfloored",
+        "s2_spectral_water_weight",
+        "s2_common_valid_observation_count",
+        "s2_sufficient_observation_support",
+        "persistent_water_occurrence_percent",
+        "persistent_water_valid_observation_count",
+        "persistent_water_observation_support",
+        "persistent_water_weight",
+        "persistent_water_mask"
+      ],
+      "bands": [
+        {
+          "band": "vnp_median_corrected_radiance",
+          "display_mode": "log",
+          "maximum": 276.786865234375,
+          "median": 31.998804092407227,
+          "minimum": 1.553511381149292,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "vnp_valid_observation_count",
+          "display_mode": "linear",
+          "maximum": 71.0,
+          "median": 59.0,
+          "minimum": 35.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "s2_base_proxy_unwatered_unfloored",
+          "display_mode": "linear",
+          "maximum": 1.0,
+          "median": 0.3313085734844208,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "s2_spectral_water_weight",
+          "display_mode": "linear",
+          "maximum": 1.0,
+          "median": 1.0,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "s2_common_valid_observation_count",
+          "display_mode": "linear",
+          "maximum": 14.0,
+          "median": 11.0,
+          "minimum": 7.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "s2_sufficient_observation_support",
+          "display_mode": "binary",
+          "maximum": 1.0,
+          "median": 1.0,
+          "minimum": 1.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "persistent_water_occurrence_percent",
+          "display_mode": "linear",
+          "maximum": 83.60355377197266,
+          "median": 0.0,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "persistent_water_weight",
+          "display_mode": "linear",
+          "maximum": 1.0,
+          "median": 1.0,
+          "minimum": 0.07107166945934296,
+          "valid_overview_pixels": 1210000
+        },
+        {
+          "band": "persistent_water_mask",
+          "display_mode": "binary",
+          "maximum": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "valid_overview_pixels": 1210000
+        }
+      ],
+      "city_id": "india_delhi",
+      "cog_layout": "COG",
+      "crs_valid": true,
+      "expected_crs": "EPSG:32643",
+      "expected_shape": [
+        5200,
+        5200
+      ],
+      "expected_transform": [
+        10,
+        0.0,
+        689980.0,
+        0.0,
+        -10,
+        3193200.0
+      ],
+      "grid_contract_valid": true,
+      "nodata": -9999.0,
+      "overture_preview_path": "outputs/psf_disaggregation/previews/day2_sources/india_delhi_overture_structure.png",
+      "overture_source_path": "outputs/psf_disaggregation/rasters/day2_inputs/india_delhi/overture_structure_bundle.tif",
+      "preview_path": "outputs/psf_disaggregation/previews/day2_sources/india_delhi_ee_source_bundle.png",
+      "shape_valid": true,
+      "source_path": "drafts/india_delhi_ee_source_bundle_v2_vnp_coverage_diagnostics.tif",
+      "transform_valid": true,
+      "vnp_coverage_preview_path": "outputs/psf_disaggregation/previews/day2_sources/india_delhi_vnp_coverage.png",
+      "vnp_qa_comparison": {
+        "analysis_pixel_count": 25000000,
+        "analysis_shape": [
+          5000,
+          5000
+        ],
+        "analysis_support": "core_square_excluding_source_halo",
+        "broad_coverage_fraction": 1.0,
+        "broad_only_area_km2": 0.0,
+        "broad_only_coverage_fraction": 0.0,
+        "broad_only_support": {
+          "jrc_zero_occurrence_fraction": null,
+          "mean_broad_observation_count": null,
+          "mean_jrc_water_occurrence_percent": null,
+          "mean_source_observation_count": null,
+          "mean_strict_observation_count": null,
+          "persistent_water_mask_fraction": null,
+          "pixel_count": 0
+        },
+        "common_coverage_fraction": 1.0,
+        "common_support": {
+          "broad_mean_radiance": 37.22224849924213,
+          "broad_minus_strict_mean_radiance": -0.4491126468321228,
+          "mean_absolute_difference": 0.6025126931524086,
+          "pearson_correlation": 0.9992792688146648,
+          "pixel_count": 25000000,
+          "strict_mean_radiance": 37.67136114607425
+        },
+        "strict_primary_coverage_fraction": 1.0
+      }
+    }
+  ]
+}

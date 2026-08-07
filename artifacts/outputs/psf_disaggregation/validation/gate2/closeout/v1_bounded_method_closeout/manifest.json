@@ -1,0 +1,61 @@
+{
+  "artifact_version": "v1_bounded_method_closeout",
+  "classification": "bounded_method_result_with_useful_negative_findings",
+  "config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "created_at_utc": "2026-07-30T15:55:22.075194+00:00",
+  "outputs": {
+    "evidence_classification": {
+      "bytes": 2476,
+      "path": "outputs/psf_disaggregation/validation/gate2/closeout/v1_bounded_method_closeout/evidence_classification.json",
+      "sha256": "5726cac2b3ecc6b9fc38fb19779f0741cb53e0497ca66601a7834ab04a8a758e"
+    },
+    "headline_metrics": {
+      "bytes": 4596,
+      "path": "outputs/psf_disaggregation/validation/gate2/closeout/v1_bounded_method_closeout/headline_metrics.csv",
+      "sha256": "f3e9f8143e7b40abd57074de05827c0e4291d212265a82450f382b1f73108baf"
+    },
+    "summary_figure": {
+      "bytes": 262855,
+      "path": "outputs/psf_disaggregation/validation/gate2/closeout/v1_bounded_method_closeout/day3_evidence_summary.png",
+      "sha256": "69cfa9d87cdc11674e84a22ec582b53fd1bfc44f0445ab38f46b382075cbd86a"
+    }
+  },
+  "schema_version": 1,
+  "source_artifacts": {
+    "daily_vnp_audit": {
+      "bytes": 2859,
+      "path": "outputs/psf_disaggregation/inputs/gate2_daily_vnp/audit_summary.json",
+      "sha256": "3fe36d120e8b2569488c9f0a04e067da29964a71e2cbc33ccde139ff88438ec7"
+    },
+    "gate0_figures": {
+      "bytes": 3765,
+      "path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/gate0_figure_regeneration.json",
+      "sha256": "cab6540b7fd33bb647484f7fa31f962bf981ea263bbe9cff7fc23dee127d90c7"
+    },
+    "heldout": {
+      "bytes": 2223,
+      "path": "outputs/psf_disaggregation/validation/gate2/heldout/v2_physics_buffered_native_cell/manifest.json",
+      "sha256": "2386b5d691fb3ec92db42b1829b1d2a93dedeecc8a3a8b435ee0124772f387b2"
+    },
+    "observation_conditions": {
+      "bytes": 1952,
+      "path": "outputs/psf_disaggregation/validation/gate2/observation_conditions/v1_daily_coarse_operator/manifest.json",
+      "sha256": "520190567e817a0de7d748b92559789d985de33760d4cb5f3eb4eb168356fb54"
+    },
+    "primary_selection": {
+      "bytes": 3319,
+      "path": "outputs/psf_disaggregation/validation/gate2/primary_selection/v1_post_gate2/selection.json",
+      "sha256": "c537a8f9b6521cbf46bf68a8b01e65b4ddbba6d55648bdc4055742b99d3c26af"
+    },
+    "sensitivity": {
+      "bytes": 1986,
+      "path": "outputs/psf_disaggregation/validation/gate2/sensitivity/v1_full_city_sensitivity/manifest.json",
+      "sha256": "6314089d1d5a0f8818bf915df12d6c0e72caa985b4e2e7bb8d92e1e35c8c86ff"
+    },
+    "shoreline": {
+      "bytes": 4849,
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/manifest.json",
+      "sha256": "48bd4ce711ca4fa3030ac998663b98d9eb7336bc4c0df1d9a659b957033fccac"
+    }
+  }
+}

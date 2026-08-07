@@ -1,0 +1,31 @@
+{
+  "all_primary_and_baseline_products_complete_coverage": true,
+  "artifact_version": "v1_coverage_and_water_inland",
+  "artifacts": {
+    "product_audit": {
+      "path": "outputs/psf_disaggregation/validation/gate2/broad_reporting/v1_coverage_and_water_inland/product_audit.csv",
+      "sha256": "5c66cb30be3cfc97ade0ff3849387e5b7595c15bdbd404cc2c9e3ac36065dec7"
+    },
+    "strict_broad_comparison": {
+      "path": "outputs/psf_disaggregation/validation/gate2/broad_reporting/v1_coverage_and_water_inland/strict_broad_comparison.csv",
+      "sha256": "759a1801938f06c157260c2b63549f0f9cd79765c8e3da0743463d9d7a83c142"
+    },
+    "water_inland_ratio": {
+      "path": "outputs/psf_disaggregation/validation/gate2/broad_reporting/v1_coverage_and_water_inland/water_inland_ratio.csv",
+      "sha256": "9545b4fdcc8f8e717c2831f1550731033a95c97129fdbdab9664b0dcfa66c406"
+    }
+  },
+  "broad_reporting_manifest": {
+    "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/artifact_manifest.json",
+    "sha256": "8ebcadbaf5957276877786db6c30a2a391c3971372ffa5aeb4d621161ac8ab51"
+  },
+  "config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "created_at_utc": "2026-08-03T14:38:33.007619+00:00",
+  "observation_condition_policy": "retain the completed strict daily propagation audit as a conservative sensitivity; the reporting-median change does not alter its radiance-blind non-amplification comparison and no broad daily stack is fabricated",
+  "reporting_selection": {
+    "path": "outputs/psf_disaggregation/validation/gate2/primary_selection/v2_broad_qa_reporting/selection.json",
+    "sha256": "64b44498aefe9aa94b5cf88c406b1a25a0ffff876dd6c677e3347bca3488dadc"
+  },
+  "s2_ablation_support_interpretation": "New York broad QA removes every radiance-neighborhood gap; remaining invalid output is unchanged S2 proxy-neighborhood support, not VNP coverage",
+  "schema_version": 1
+}

@@ -1,0 +1,70 @@
+{
+  "decision_date": "2026-08-03",
+  "decision_id": "VNP-COVERAGE-002",
+  "gap_filled_role": "explicit sensitivity only; not selected",
+  "interpretation_limit": "broad QA admits MQF 1 and lower cloud-mask quality; coverage completeness does not imply equivalently high quality at every pixel",
+  "kernel": "circular_mean_reference",
+  "minimum_valid_observations": 5,
+  "proxy": "built_form_primary",
+  "radiance_variant": "broad_sensitivity",
+  "rationale": "complete two-city spatial coverage avoids dilation of a small strict retrieval-support mask; selection is coverage-driven, not performance-tuned",
+  "s2_spatial_scope": "New York S2-only was regenerated under broad QA; Delhi S2-only remains strict-v1, so the city maps are not a matched radiance-contract pair",
+  "schema_version": 1,
+  "selected_artifacts": [
+    {
+      "built_form_primary": {
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/products.tif",
+        "sha256": "7776b805d783ada02f2593c08907375617368f78499abd9ca8afc3d7c7f739e0"
+      },
+      "city_id": "usa_new_york",
+      "direct": {
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/direct_upsample__broad_qa/products.tif",
+        "sha256": "cfe7926dcb860e2802122195ef80a8910a5f21413685e4163a34ed732e5fb39d"
+      },
+      "s2_ablation_trust_indicators": {
+        "copied_from": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/usa_new_york/s2_only_ablation__no_water_prior__circular_mean_reference/trust_indicators.tif",
+        "identity_reason": "gain depends on proxy and kernel, not radiance",
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/s2_only_ablation__no_water_prior__circular_mean_reference__broad_qa/trust_indicators.tif",
+        "sha256": "ae73447106347b2746db4870b497a2638fbcf59909c4a937d9af893db97bd593"
+      },
+      "s2_only_ablation": {
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/s2_only_ablation__no_water_prior__circular_mean_reference__broad_qa/products.tif",
+        "sha256": "b36e3b9fd2ae353a4569f1d476a81db8fcf7985e85c63affde11f9c4a2fb78e5"
+      },
+      "trust_indicators": {
+        "copied_from": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/usa_new_york/built_form_primary__no_water_prior__circular_mean_reference/trust_indicators.tif",
+        "identity_reason": "gain depends on proxy and kernel, not radiance",
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/trust_indicators.tif",
+        "sha256": "2da15d0cc02545e89d4446e62ae033ef546cc1b9b087dc4c62ba66fedbb3a6ff"
+      },
+      "uniform": {
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/uniform_normalized_convolution__broad_qa/products.tif",
+        "sha256": "5a32016ae7fe7249c115a747c23dd8b741c0190690cf3b6ffa8f0afe8a6feb93"
+      }
+    },
+    {
+      "built_form_primary": {
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/products.tif",
+        "sha256": "5362dfe44f75ab5c1b8a6a17fbf2bce1da263969ebca3d31dc4b4bd960d0cb15"
+      },
+      "city_id": "india_delhi",
+      "direct": {
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/direct_upsample__broad_qa/products.tif",
+        "sha256": "9b7e69186460a02051e1a1b9d8381693bfb6f604b24a3daf20383be64ab61d92"
+      },
+      "trust_indicators": {
+        "copied_from": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/india_delhi/built_form_primary__no_water_prior__circular_mean_reference/trust_indicators.tif",
+        "identity_reason": "gain depends on proxy and kernel, not radiance",
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/trust_indicators.tif",
+        "sha256": "e6b5d54554b1078d2c3899f737523aee63b1926baef725cc5be49a6629d0c5bf"
+      },
+      "uniform": {
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/uniform_normalized_convolution__broad_qa/products.tif",
+        "sha256": "39af845a512f16bb2c9031cc0b772f1a3ccd59aba19309a4fd0e31d60bd330e6"
+      }
+    }
+  ],
+  "status": "accepted_for_demonstration_reporting",
+  "strict_v1_role": "immutable conservative quality sensitivity and authority for the frozen Gate 0 cohort and strict daily-condition audit",
+  "water_variant": "no_water_prior"
+}

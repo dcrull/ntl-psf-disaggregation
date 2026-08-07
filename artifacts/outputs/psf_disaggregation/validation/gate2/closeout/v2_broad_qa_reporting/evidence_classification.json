@@ -1,0 +1,44 @@
+{
+  "classification": "coverage_complete_bounded_method_result",
+  "experiment_contract": {
+    "fine_grid_limit": "the 10 m products are structurally allocated observation fields, not independently observed or calibrated 10 m radiance",
+    "objective": "test whether a static fine-grid structural proxy can allocate coarse VNP46A2 radiance more plausibly than declared null allocations while VNP46A2 remains the radiometric authority",
+    "primary_estimand": "native-cell broad-QA held-out prediction error under the frozen 2550 m PSF-support exclusion"
+  },
+  "inherited_evidence": [
+    "the daily observation-condition propagation audit remains strict-QA conservative sensitivity evidence and is not relabeled as broad-QA validation"
+  ],
+  "mixed_findings": [
+    "Delhi built form improves broad-QA MAE in 4 of 5 folds; fold 3 worsens by only 0.044 radiance units",
+    "New York S2-only remains lower-error than built form, while Delhi S2-only remains negative overall",
+    "broad QA removes support holes but admits MQF 1 and lower cloud-mask quality",
+    "only the New York S2-only spatial raster was regenerated under broad QA; the Delhi S2-only spatial sensitivity remains strict-v1 and is not a like-for-like cross-city map comparison"
+  ],
+  "remaining_review": [
+    "user visual inspection of the two v2 built-form primary COGs"
+  ],
+  "reporting_primary": {
+    "kernel": "circular_mean_reference",
+    "proxy": "built_form_primary",
+    "radiance": "broad_QA_corrected_VNP46A2_median_minimum_5",
+    "required_baselines": [
+      "broad_direct",
+      "broad_uniform"
+    ],
+    "water_variant": "no_water_prior"
+  },
+  "supported_claims": [
+    "all v2 primary and baseline COGs have complete two-city spatial support",
+    "the New York S2-only broad-QA sensitivity has zero radiance-neighborhood gaps; remaining invalid pixels are unchanged S2 proxy-support gaps",
+    "on the frozen native-cell cohort, broad-QA built form improves overall MAE and RMSE in both cities at the 2550 m buffer",
+    "the radiance-blind gain asymmetry persists under broad QA in all four city-by-proxy comparisons",
+    "the broad water-versus-inland result remains consistent with general low-proxy reallocation rather than a water-specific effect"
+  ],
+  "unsupported_claims": [
+    "observed or calibrated 10 m nighttime radiance",
+    "pixel-level accuracy from gain strata",
+    "equivalent quality of MQF 0 and MQF 1",
+    "broad-QA daily observation-condition correction",
+    "validated water correction or recovered physical emissions"
+  ]
+}

@@ -1,0 +1,7 @@
+city_id,condition,sample_count,minimum,maximum,unique_values,estimable_within_strict_qa
+usa_new_york,mandatory_quality_flag,335367,0.0,0.0,[0.0],False
+usa_new_york,snow_flag,335367,0.0,0.0,[0.0],False
+usa_new_york,retrieval_age_days,335367,0.0,0.0,[0.0],False
+india_delhi,mandatory_quality_flag,588984,0.0,0.0,[0.0],False
+india_delhi,snow_flag,588984,0.0,0.0,[0.0],False
+india_delhi,retrieval_age_days,588984,0.0,0.0,[0.0],False

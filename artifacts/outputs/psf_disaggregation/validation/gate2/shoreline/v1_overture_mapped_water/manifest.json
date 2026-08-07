@@ -1,0 +1,79 @@
+{
+  "artifact_version": "v1_overture_mapped_water",
+  "artifacts": {
+    "india_delhi_water_variant_difference_maps": {
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/india_delhi_water_variant_difference_maps.png",
+      "sha256": "072eaf0b2eef7935ea479fcd9efedaf2b93585caa4cf10e3ccbd0f68dfc40ed0"
+    },
+    "matched_inland_low_proxy_bands": {
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/matched_inland_low_proxy_bands.csv",
+      "sha256": "ecff966869908dc539a9597fc5a0c08e4a84718be65de69211a912096078c2a8"
+    },
+    "shoreline_bands": {
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/shoreline_bands.csv",
+      "sha256": "3fd1bf1ed79e33f063371c3b8258bdb7c7b469eb717bf9bfdb5f3aa07622e574"
+    },
+    "summary": {
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/summary.csv",
+      "sha256": "329d43267e25703f66e02f8203d0899114098c69e2839b708d99dec85cc7a6bb"
+    },
+    "usa_new_york_water_variant_difference_maps": {
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/usa_new_york_water_variant_difference_maps.png",
+      "sha256": "da601f763e5cf5c3469d8c1dd87082cb15b66599b2064dd153d22faa88f2f15e"
+    },
+    "water_allocation_share_figure": {
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/water_allocation_share.png",
+      "sha256": "71d8b0432adfbf9436ffcdf63c6c599d1e529c263ca69c65d56da4d6d159a9c0"
+    },
+    "waterfront_infrastructure_strata": {
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/waterfront_infrastructure_strata.csv",
+      "sha256": "c9838bf47f2856a864839b142e33a96f2a8e2c34a7a32f1f62707dbf87c40db3"
+    },
+    "waterfront_infrastructure_strata_figure": {
+      "path": "outputs/psf_disaggregation/validation/gate2/shoreline/v1_overture_mapped_water/waterfront_infrastructure_strata.png",
+      "sha256": "d6b118e9b9e268e9613d4c228ad981160141ce6d1ee912b03b828af18c69c3f1"
+    }
+  },
+  "comparison_contract": "stationary variants compare with the matching proxy no-water result; uniform compares with direct; direct is self-referenced",
+  "config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "created_at_utc": "2026-07-30T00:14:09.272434+00:00",
+  "matched_control_contract": "lowest proxy-valued inland pixels more than 1500 m from mapped water; target area equals mapped-water area but is capped at 10% of eligible inland support so surrounding boundary bands remain measurable",
+  "prohibition": "lower allocated-water share alone does not select a winner",
+  "reference_sources": {
+    "india_delhi": {
+      "overture_infrastructure": {
+        "path": "outputs/psf_disaggregation/inputs/gate2_water_reference/india_delhi/overture_infrastructure_2026-07-22.0.parquet",
+        "sha256": "68ef2c874df2fb9ede8d7dbf01bb6ea6a0daf699eb97e2aae48ec1e571be177b"
+      },
+      "water_metadata": {
+        "path": "outputs/psf_disaggregation/inputs/gate2_water_reference/india_delhi/metadata.json",
+        "sha256": "633efbc50e8f5f9acad2b66eb545e75945850d53ec248e20d6ee225945f8bdb9"
+      },
+      "water_reference": {
+        "path": "outputs/psf_disaggregation/inputs/gate2_water_reference/india_delhi/water_reference.tif",
+        "sha256": "a93f2cd3e74709d9812c8ac5857829d4e67ca73925a12ea604b8a53e19102409"
+      }
+    },
+    "usa_new_york": {
+      "overture_infrastructure": {
+        "path": "outputs/psf_disaggregation/inputs/gate2_water_reference/usa_new_york/overture_infrastructure_2026-07-22.0.parquet",
+        "sha256": "ab3476d2d72e46ddae6a9f09a2dbe1a203bf1030a7b1431bc26d799565c5696a"
+      },
+      "water_metadata": {
+        "path": "outputs/psf_disaggregation/inputs/gate2_water_reference/usa_new_york/metadata.json",
+        "sha256": "2b3c925e57ee55a09a89d73f81b2c5afb5b38bdb4561ba844fcb32b0631ab6d8"
+      },
+      "water_reference": {
+        "path": "outputs/psf_disaggregation/inputs/gate2_water_reference/usa_new_york/water_reference.tif",
+        "sha256": "7e069e07976d8a8eb0c1506557594e262244e35201132c770a2866c7ddb4e997"
+      }
+    }
+  },
+  "schema_version": 1,
+  "source_manifest": {
+    "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/artifact_manifest.json",
+    "sha256": "ac81dee6723d229e419bd7b6089ee0a5d8ba32ddfe8f42dced2ce7771a587489"
+  },
+  "water_reference_contract": "pinned Overture mapped areal water; independent of JRC, OSM-derived, not an exhaustive optical classification",
+  "waterfront_strata_contract": "mutually exclusive priority: mapped pier/quay, mapped bridge, mapped building, mapped road, ordinary shoreline; reported separately over mapped water and adjacent land within 100 m"
+}

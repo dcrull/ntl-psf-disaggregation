@@ -1,0 +1,5 @@
+city_id,proxy,water_reduction_fraction,matched_inland_reduction_fraction,water_minus_inland_reduction_fraction,direction
+usa_new_york,built_form_primary,0.3928251247756547,0.8099806036535486,-0.41715547887789395,inland_larger_reduction
+usa_new_york,s2_only_ablation,0.0682854051347156,0.6856227241524682,-0.6173373190177526,inland_larger_reduction
+india_delhi,built_form_primary,0.5276803292018093,0.551561926420095,-0.023881597218285755,inland_larger_reduction
+india_delhi,s2_only_ablation,-0.18971639949343366,0.7048491832819161,-0.8945655827753498,inland_larger_reduction

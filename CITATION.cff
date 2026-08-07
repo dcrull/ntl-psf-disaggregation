@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "NTL PSF Disaggregation"
+abstract: >-
+  Code and reproducibility materials for PSF-aware, locally normalized
+  structural allocation of VNP46A2 nighttime-light radiance over New York and
+  Delhi.
+authors:
+  - family-names: "Crull"
+    given-names: "Daynan"
+version: 0.1.0
+date-released: 2026-08-07
+license: BSD-3-Clause
+keywords:
+  - nighttime lights
+  - VIIRS
+  - point-spread function
+  - spatial disaggregation
+  - remote sensing

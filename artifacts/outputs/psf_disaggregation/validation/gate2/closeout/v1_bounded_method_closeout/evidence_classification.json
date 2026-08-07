@@ -1,0 +1,41 @@
+{
+  "classification": "bounded_method_result_with_useful_negative_findings",
+  "created_at_utc": "2026-07-30T15:55:22.074964+00:00",
+  "deferred_or_optional": [
+    "Independent calibrated SDGSAT-1 comparison, if a suitable aligned scene becomes available.",
+    "Remove-before-fine-grid-convolution held-out evaluation for a stronger operator-level leakage claim.",
+    "Historical OSM versus contemporary Overture sensitivity; checkpoints are preserved but the comparison is confounded by source coverage and was deprioritized."
+  ],
+  "negative_or_mixed_findings": [
+    "Strong structural upweighting (gain >=1.25) increases held-out absolute error in all four city-by-proxy comparisons.",
+    "Delhi S2-only worsens held-out MAE and RMSE at the primary buffer; New York S2-only has lower error than built form, showing proxy performance is city-dependent.",
+    "Wider Gaussian kernels lose valid support and have worse operator-consistency error.",
+    "Strict daily complete-kernel support is sparse in New York, with mean 0.263 and median 0.087."
+  ],
+  "reporting_primary": {
+    "kernel": "circular_mean_reference",
+    "proxy": "built_form_primary",
+    "radiance": "strict_QA_corrected_VNP46A2",
+    "required_baselines": [
+      "direct_upsample",
+      "uniform_normalized_convolution"
+    ],
+    "water_variant": "no_water_prior"
+  },
+  "schema_version": 1,
+  "supported_claims": [
+    "The implementation produces reproducible, inspectable, locally normalized structural allocations with explicit support and consistency diagnostics.",
+    "At the physics-set 2550 m held-out buffer, built form improves native-cell MAE and RMSE over neighbors-only interpolation in both cities and improves MAE in all five folds per city.",
+    "Built form does not materially amplify daily lunar/cloud association or temporal variability beyond uniform smoothing in the 500 m daily operator audit.",
+    "Water weighting causes proxy-dependent shoreline redistribution that cannot be validated as more accurate, supporting no water prior as the simpler reporting primary."
+  ],
+  "unsupported_claims": [
+    "recovered or observed 10 m nighttime radiance",
+    "radiometrically calibrated super-resolution",
+    "physical emission or flux conservation",
+    "recovered VIIRS point-spread function",
+    "validated water correction",
+    "fine-scale accuracy without an independent high-resolution nighttime reference",
+    "causal correction of lunar or cloud effects"
+  ]
+}

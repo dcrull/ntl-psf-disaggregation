@@ -1,0 +1,3 @@
+city_id,common_pixel_count,newly_filled_pixel_count,strict_valid_fraction,broad_valid_fraction,pearson_on_common_support,mean_broad_minus_strict,mean_absolute_broad_minus_strict
+usa_new_york,24970731,29269,0.99882924,1.0,0.9974640483377413,-1.126272054105995,1.467943195456803
+india_delhi,25000000,0,1.0,1.0,0.9992792688146575,-0.4491126468321228,0.6025126931524086

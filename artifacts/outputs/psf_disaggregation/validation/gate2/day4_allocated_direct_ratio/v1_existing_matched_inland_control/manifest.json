@@ -1,0 +1,76 @@
+{
+  "artifact_version": "v1_existing_matched_inland_control",
+  "artifacts": {
+    "interpretation": {
+      "bytes": 1957,
+      "path": "outputs/psf_disaggregation/validation/gate2/day4_allocated_direct_ratio/v1_existing_matched_inland_control/interpretation.json",
+      "sha256": "66e5671e6ff7c8ca5ca74e8b9e4d33faf1972b6cff1482d4753f6d66870cf95c"
+    },
+    "region_metrics": {
+      "bytes": 1626,
+      "path": "outputs/psf_disaggregation/validation/gate2/day4_allocated_direct_ratio/v1_existing_matched_inland_control/region_metrics.csv",
+      "sha256": "df7103184156dcbb01c8f55bd5c31fe5bdc1bb7278d1e1f2b8ae22998bfa09f7"
+    },
+    "water_vs_inland_comparison": {
+      "bytes": 580,
+      "path": "outputs/psf_disaggregation/validation/gate2/day4_allocated_direct_ratio/v1_existing_matched_inland_control/water_vs_inland_comparison.csv",
+      "sha256": "a146b723323d28c1276906d54f26728ea1808f322bfdd5670754b37907dc81b6"
+    }
+  },
+  "config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "control_contract": "reuse the frozen v1 shoreline radiance-blind matched-low-proxy mask exactly",
+  "created_at_utc": "2026-08-02T23:46:57.546518+00:00",
+  "metric_contract": "ratio of allocated-radiance sum to nonnegative direct-radiance sum on common finite regional support; reduction is one minus that ratio",
+  "schema_version": 1,
+  "sources": {
+    "full_city_manifest": {
+      "bytes": 15955039,
+      "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/artifact_manifest.json",
+      "sha256": "ac81dee6723d229e419bd7b6089ee0a5d8ba32ddfe8f42dced2ce7771a587489"
+    },
+    "india_delhi": {
+      "built_form_primary": {
+        "bytes": 277586398,
+        "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/india_delhi/built_form_primary__no_water_prior__circular_mean_reference/products.tif",
+        "sha256": "ce57eabe3a0e55109a3c5a62a6298e9578cda9005d9e87966835845cd4ff722c"
+      },
+      "direct": {
+        "bytes": 13241317,
+        "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/india_delhi/direct_upsample/products.tif",
+        "sha256": "05b1711f809e5b9b5b2996944f4cc26f4aa5b64a2998ce201acda081aa4bf021"
+      },
+      "s2_only_ablation": {
+        "bytes": 277584786,
+        "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/india_delhi/s2_only_ablation__no_water_prior__circular_mean_reference/products.tif",
+        "sha256": "3b2d1246310a30731d3c474e383ccaddd5f920139f170f1a79b846ea6cf7383a"
+      },
+      "water_reference": {
+        "bytes": 165172,
+        "path": "outputs/psf_disaggregation/inputs/gate2_water_reference/india_delhi/water_reference.tif",
+        "sha256": "a93f2cd3e74709d9812c8ac5857829d4e67ca73925a12ea604b8a53e19102409"
+      }
+    },
+    "usa_new_york": {
+      "built_form_primary": {
+        "bytes": 276073635,
+        "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/usa_new_york/built_form_primary__no_water_prior__circular_mean_reference/products.tif",
+        "sha256": "ef81d5d75c815d093b9fb5937d1e2a79a49837fd1041b166ac5abc3f6cf4012b"
+      },
+      "direct": {
+        "bytes": 13774088,
+        "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/usa_new_york/direct_upsample/products.tif",
+        "sha256": "ad2e091c811fdd89d614b61b406dda2fb0d53c6f5071083612adc73a80dbe0d0"
+      },
+      "s2_only_ablation": {
+        "bytes": 276755435,
+        "path": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/usa_new_york/s2_only_ablation__no_water_prior__circular_mean_reference/products.tif",
+        "sha256": "dde803d37ff4dc47f2bc0c4bd535f2b3cfd1932e72d4bedd953aa130485186a7"
+      },
+      "water_reference": {
+        "bytes": 297490,
+        "path": "outputs/psf_disaggregation/inputs/gate2_water_reference/usa_new_york/water_reference.tif",
+        "sha256": "7e069e07976d8a8eb0c1506557594e262244e35201132c770a2866c7ddb4e997"
+      }
+    }
+  }
+}

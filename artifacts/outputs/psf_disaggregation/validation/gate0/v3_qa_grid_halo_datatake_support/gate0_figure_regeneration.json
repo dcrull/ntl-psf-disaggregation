@@ -1,0 +1,57 @@
+{
+  "artifact_version": "v3_qa_grid_halo_datatake_support",
+  "created_at_utc": "2026-07-30T15:53:47.609707+00:00",
+  "defect_closed": "ARTIFACT-PROVENANCE-001",
+  "figures": [
+    {
+      "allocation_proxy": "built_form_primary",
+      "city_id": "usa_new_york",
+      "displayed_block_spearman": 0.8260674578919086,
+      "displayed_citywide_spearman": 0.8118753697574609,
+      "figure_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/usa_new_york_built_form_gate0.png",
+      "figure_sha256": "9d1ddba4db27980541fd61af47fda003d4d7c28f976523aec1666dc74b163bf5",
+      "sample_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/usa_new_york_built_form_samples.csv",
+      "sample_sha256": "9862b3f206524c2ca80fc76ed1136bbdc4445c9310a52dc6ad37d88e4e00de14",
+      "summary_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/built_form_gate0_summary.csv",
+      "summary_sha256": "9c1dbea921e1cfd641a03df5ff83103cf8b10629406f59f9f0f011e9bf21ffd1"
+    },
+    {
+      "allocation_proxy": "built_form_primary",
+      "city_id": "india_delhi",
+      "displayed_block_spearman": 0.900982251727408,
+      "displayed_citywide_spearman": 0.761388421074118,
+      "figure_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/india_delhi_built_form_gate0.png",
+      "figure_sha256": "e1b76d557ee2d9f7c7c49b703e166212dde90142bf8b11607f884ef6b3d8ba57",
+      "sample_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/india_delhi_built_form_samples.csv",
+      "sample_sha256": "d4b35af82dae9ec13efc2381da350c6436ab1351788e0dd85e192206f0b434bb",
+      "summary_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/built_form_gate0_summary.csv",
+      "summary_sha256": "9c1dbea921e1cfd641a03df5ff83103cf8b10629406f59f9f0f011e9bf21ffd1"
+    },
+    {
+      "allocation_proxy": "s2_only_ablation",
+      "city_id": "usa_new_york",
+      "displayed_block_spearman": 0.8111951229256498,
+      "displayed_citywide_spearman": 0.7831802929029006,
+      "figure_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/usa_new_york_s2_only_gate0.png",
+      "figure_sha256": "9bb476f8ed19799197aaf1c5375c20b50b5f0726329842b97dd7459b8be7f0d9",
+      "sample_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/usa_new_york_s2_only_samples.csv",
+      "sample_sha256": "f434166b5c8eb7bf8cc991303b96ca425229f3bec5c8509a83eb1238e35c8dca",
+      "summary_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/s2_only_gate0_summary.csv",
+      "summary_sha256": "00288b76d4bd823b2db854d06ad23a20a99220af64c3eb6ee1a358a0f4c5a73f"
+    },
+    {
+      "allocation_proxy": "s2_only_ablation",
+      "city_id": "india_delhi",
+      "displayed_block_spearman": 0.5758162850562253,
+      "displayed_citywide_spearman": 0.4377836852934273,
+      "figure_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/india_delhi_s2_only_gate0.png",
+      "figure_sha256": "2736b01b8eb43d6a4ed3018a0fad46ee54f0983005df3c9e08927df823309e14",
+      "sample_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/india_delhi_s2_only_samples.csv",
+      "sample_sha256": "d713489243850b0f6286ded22343ca90f1ef402bafde8604ed9584eeff881345",
+      "summary_path": "outputs/psf_disaggregation/validation/gate0/v3_qa_grid_halo_datatake_support/s2_only_gate0_summary.csv",
+      "summary_sha256": "00288b76d4bd823b2db854d06ad23a20a99220af64c3eb6ee1a358a0f4c5a73f"
+    }
+  ],
+  "schema_version": 1,
+  "source_policy": "saved v3 samples and v3 summary tables only"
+}

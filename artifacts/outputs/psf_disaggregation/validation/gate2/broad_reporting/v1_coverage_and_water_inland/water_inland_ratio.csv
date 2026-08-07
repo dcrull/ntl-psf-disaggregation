@@ -1,0 +1,7 @@
+city_id,region,region_pixel_count,common_support_pixel_count,allocated_radiance_sum,positive_direct_radiance_sum,allocated_to_direct_ratio,reduction_fraction_vs_direct
+usa_new_york,mapped_water,4239193,4239193,38931388.10364807,64453041.03750765,0.604027171983901,0.395972828016099
+usa_new_york,matched_inland_low_proxy,382663,382663,4029015.059436083,21223931.303082466,0.18983358935254974,0.8101664106474502
+usa_new_york,water_minus_inland_reduction,,,,,,-0.4141935826313512
+india_delhi,mapped_water,430646,430646,4697477.783340931,9911180.947016478,0.47395742328314505,0.526042576716855
+india_delhi,matched_inland_low_proxy,298734,298734,1135528.4164583087,2522800.8429728746,0.450106245850227,0.549893754149773
+india_delhi,water_minus_inland_reduction,,,,,,-0.02385117743291809

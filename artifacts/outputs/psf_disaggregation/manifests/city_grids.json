@@ -1,0 +1,139 @@
+{
+  "experiment_id": "psf_disaggregation",
+  "experiment_contract_version": "integrity_v3",
+  "config_sha256": "3841bf8055451e1aa1635fd7c63c9b0d6aeb92f90e79b40e8ca136d1e71e31ef",
+  "grid_semantics": "exact projected square centered on the manifest point snapped to the working grid",
+  "analysis_geometry": {
+    "decision_id": "AOI-001",
+    "type": "projected_square",
+    "side_length_km": 50.0,
+    "center_snap_to_grid": true,
+    "source_halo_m": 1000
+  },
+  "resampling_contract": {
+    "continuous": {
+      "decision_id": "RESAMPLE-001",
+      "method": "bilinear"
+    },
+    "categorical": {
+      "decision_id": "RESAMPLE-001",
+      "method": "nearest"
+    }
+  },
+  "cities": [
+    {
+      "city_id": "usa_new_york",
+      "center_lat": 40.7128,
+      "center_lon": -74.006,
+      "crs": "EPSG:32618",
+      "resolution_m": 10,
+      "center_x": 583960,
+      "center_y": 4507350,
+      "west": 558960.0,
+      "south": 4482350.0,
+      "east": 608960.0,
+      "north": 4532350.0,
+      "width": 5000,
+      "height": 5000,
+      "analysis_wgs84_bounds": [
+        -74.30428278165394,
+        40.48469857338728,
+        -73.70570923723793,
+        40.940156003962024
+      ],
+      "analysis_wgs84_ring": [
+        [
+          -74.30428278165394,
+          40.48975522436409
+        ],
+        [
+          -73.71440055890294,
+          40.48469857338728
+        ],
+        [
+          -73.70570923723793,
+          40.935018853771496
+        ],
+        [
+          -74.29957824307343,
+          40.940156003962024
+        ],
+        [
+          -74.30428278165394,
+          40.48975522436409
+        ]
+      ],
+      "source_wgs84_bounds": [
+        -74.3161732273201,
+        40.475560002451886,
+        -73.69365613133698,
+        40.949235225079555
+      ],
+      "transform": [
+        10,
+        0.0,
+        558960.0,
+        0.0,
+        -10,
+        4532350.0
+      ]
+    },
+    {
+      "city_id": "india_delhi",
+      "center_lat": 28.6139,
+      "center_lon": 77.209,
+      "crs": "EPSG:32643",
+      "resolution_m": 10,
+      "center_x": 715980,
+      "center_y": 3167200,
+      "west": 690980.0,
+      "south": 3142200.0,
+      "east": 740980.0,
+      "north": 3192200.0,
+      "width": 5000,
+      "height": 5000,
+      "analysis_wgs84_bounds": [
+        76.94928032742038,
+        28.383993629766028,
+        77.46980183808041,
+        28.843307832927213
+      ],
+      "analysis_wgs84_ring": [
+        [
+          76.94928032742038,
+          28.3922471658323
+        ],
+        [
+          77.45927102611579,
+          28.383993629766028
+        ],
+        [
+          77.46980183808041,
+          28.83489905817567
+        ],
+        [
+          76.95763115290943,
+          28.843307832927213
+        ],
+        [
+          76.94928032742038,
+          28.3922471658323
+        ]
+      ],
+      "source_wgs84_bounds": [
+        76.93891420572263,
+        28.374790737612955,
+        77.48025690277085,
+        28.85247713052577
+      ],
+      "transform": [
+        10,
+        0.0,
+        690980.0,
+        0.0,
+        -10,
+        3192200.0
+      ]
+    }
+  ]
+}

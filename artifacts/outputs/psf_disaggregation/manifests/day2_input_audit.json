@@ -1,0 +1,306 @@
+{
+  "artifact_version": "v2_vnp_coverage_diagnostics",
+  "cities": [
+    {
+      "bundles": [
+        {
+          "band_count": 26,
+          "band_order_authority": "day2_earth_engine_exports.json",
+          "bytes": 946679190,
+          "crs": "EPSG:32618",
+          "driver": "GTiff",
+          "embedded_band_descriptions": [
+            "vnp_median_corrected_radiance",
+            "vnp_valid_observation_count",
+            "vnp_source_observation_count",
+            "vnp_quality_rejected_observation_count",
+            "vnp_quality_retained_fraction",
+            "vnp_broad_median_corrected_radiance",
+            "vnp_broad_valid_observation_count",
+            "vnp_gap_filled_recent7d_median_radiance",
+            "vnp_gap_filled_recent7d_day_count",
+            "vnp_gap_filled_recent30d_median_radiance",
+            "vnp_gap_filled_recent30d_day_count",
+            "vnp_gap_filled_recent90d_median_radiance",
+            "vnp_gap_filled_recent90d_day_count",
+            "vnp_gap_filled_source_observation_count",
+            "vnp_fresh_high_quality_retrieval_count",
+            "vnp_latest_high_quality_retrieval_days_median",
+            "vnp_latest_high_quality_retrieval_days_p90",
+            "s2_base_proxy_unwatered_unfloored",
+            "s2_spectral_water_weight",
+            "s2_common_valid_observation_count",
+            "s2_sufficient_observation_support",
+            "persistent_water_occurrence_percent",
+            "persistent_water_valid_observation_count",
+            "persistent_water_observation_support",
+            "persistent_water_weight",
+            "persistent_water_mask"
+          ],
+          "errors": [],
+          "exists": true,
+          "expected_bands": [
+            "vnp_median_corrected_radiance",
+            "vnp_valid_observation_count",
+            "vnp_source_observation_count",
+            "vnp_quality_rejected_observation_count",
+            "vnp_quality_retained_fraction",
+            "vnp_broad_median_corrected_radiance",
+            "vnp_broad_valid_observation_count",
+            "vnp_gap_filled_recent7d_median_radiance",
+            "vnp_gap_filled_recent7d_day_count",
+            "vnp_gap_filled_recent30d_median_radiance",
+            "vnp_gap_filled_recent30d_day_count",
+            "vnp_gap_filled_recent90d_median_radiance",
+            "vnp_gap_filled_recent90d_day_count",
+            "vnp_gap_filled_source_observation_count",
+            "vnp_fresh_high_quality_retrieval_count",
+            "vnp_latest_high_quality_retrieval_days_median",
+            "vnp_latest_high_quality_retrieval_days_p90",
+            "s2_base_proxy_unwatered_unfloored",
+            "s2_spectral_water_weight",
+            "s2_common_valid_observation_count",
+            "s2_sufficient_observation_support",
+            "persistent_water_occurrence_percent",
+            "persistent_water_valid_observation_count",
+            "persistent_water_observation_support",
+            "persistent_water_weight",
+            "persistent_water_mask"
+          ],
+          "image_structure": {
+            "COMPRESSION": "LZW",
+            "INTERLEAVE": "PIXEL",
+            "LAYOUT": "COG"
+          },
+          "path": "outputs/psf_disaggregation/rasters/day2_inputs/usa_new_york/ee_source_bundle.tif",
+          "sha256": "28e95eb384da1cd5b39a1be5d6906e2a2e042bea69aab5e7605efd22ed4bc09a",
+          "shape": [
+            5200,
+            5200
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            557960.0,
+            0.0,
+            -10.0,
+            4533350.0
+          ],
+          "valid": true
+        },
+        {
+          "band_count": 4,
+          "band_order_authority": "embedded_band_descriptions",
+          "bytes": 41535344,
+          "crs": "EPSG:32618",
+          "driver": "GTiff",
+          "embedded_band_descriptions": [
+            "building_fraction",
+            "weighted_road_density_normalized",
+            "built_form_base_proxy_unwatered_unfloored",
+            "mapped_infrastructure_mask"
+          ],
+          "errors": [],
+          "exists": true,
+          "expected_bands": [
+            "building_fraction",
+            "weighted_road_density_normalized",
+            "built_form_base_proxy_unwatered_unfloored",
+            "mapped_infrastructure_mask"
+          ],
+          "image_structure": {
+            "COMPRESSION": "DEFLATE",
+            "INTERLEAVE": "PIXEL",
+            "LAYOUT": "COG",
+            "OVERVIEW_RESAMPLING": "nearest"
+          },
+          "path": "outputs/psf_disaggregation/rasters/day2_inputs/usa_new_york/overture_structure_bundle.tif",
+          "sha256": "a01ce33b5c8f6fff0648efbb36e97ed9d4f65886b1ba842b903c2883cf85834f",
+          "shape": [
+            5200,
+            5200
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            557960.0,
+            0.0,
+            -10.0,
+            4533350.0
+          ],
+          "valid": true
+        }
+      ],
+      "city_id": "usa_new_york",
+      "expected_crs": "EPSG:32618",
+      "expected_shape": [
+        5200,
+        5200
+      ],
+      "expected_transform": [
+        10.0,
+        0.0,
+        557960.0,
+        0.0,
+        -10.0,
+        4533350.0
+      ],
+      "ready": true,
+      "source_halo_m": 1000.0
+    },
+    {
+      "bundles": [
+        {
+          "band_count": 26,
+          "band_order_authority": "day2_earth_engine_exports.json",
+          "bytes": 899555964,
+          "crs": "EPSG:32643",
+          "driver": "GTiff",
+          "embedded_band_descriptions": [
+            "vnp_median_corrected_radiance",
+            "vnp_valid_observation_count",
+            "vnp_source_observation_count",
+            "vnp_quality_rejected_observation_count",
+            "vnp_quality_retained_fraction",
+            "vnp_broad_median_corrected_radiance",
+            "vnp_broad_valid_observation_count",
+            "vnp_gap_filled_recent7d_median_radiance",
+            "vnp_gap_filled_recent7d_day_count",
+            "vnp_gap_filled_recent30d_median_radiance",
+            "vnp_gap_filled_recent30d_day_count",
+            "vnp_gap_filled_recent90d_median_radiance",
+            "vnp_gap_filled_recent90d_day_count",
+            "vnp_gap_filled_source_observation_count",
+            "vnp_fresh_high_quality_retrieval_count",
+            "vnp_latest_high_quality_retrieval_days_median",
+            "vnp_latest_high_quality_retrieval_days_p90",
+            "s2_base_proxy_unwatered_unfloored",
+            "s2_spectral_water_weight",
+            "s2_common_valid_observation_count",
+            "s2_sufficient_observation_support",
+            "persistent_water_occurrence_percent",
+            "persistent_water_valid_observation_count",
+            "persistent_water_observation_support",
+            "persistent_water_weight",
+            "persistent_water_mask"
+          ],
+          "errors": [],
+          "exists": true,
+          "expected_bands": [
+            "vnp_median_corrected_radiance",
+            "vnp_valid_observation_count",
+            "vnp_source_observation_count",
+            "vnp_quality_rejected_observation_count",
+            "vnp_quality_retained_fraction",
+            "vnp_broad_median_corrected_radiance",
+            "vnp_broad_valid_observation_count",
+            "vnp_gap_filled_recent7d_median_radiance",
+            "vnp_gap_filled_recent7d_day_count",
+            "vnp_gap_filled_recent30d_median_radiance",
+            "vnp_gap_filled_recent30d_day_count",
+            "vnp_gap_filled_recent90d_median_radiance",
+            "vnp_gap_filled_recent90d_day_count",
+            "vnp_gap_filled_source_observation_count",
+            "vnp_fresh_high_quality_retrieval_count",
+            "vnp_latest_high_quality_retrieval_days_median",
+            "vnp_latest_high_quality_retrieval_days_p90",
+            "s2_base_proxy_unwatered_unfloored",
+            "s2_spectral_water_weight",
+            "s2_common_valid_observation_count",
+            "s2_sufficient_observation_support",
+            "persistent_water_occurrence_percent",
+            "persistent_water_valid_observation_count",
+            "persistent_water_observation_support",
+            "persistent_water_weight",
+            "persistent_water_mask"
+          ],
+          "image_structure": {
+            "COMPRESSION": "LZW",
+            "INTERLEAVE": "PIXEL",
+            "LAYOUT": "COG"
+          },
+          "path": "outputs/psf_disaggregation/rasters/day2_inputs/india_delhi/ee_source_bundle.tif",
+          "sha256": "c7a381e9b3f538b55c9951d6d0fc2589568771f451dc4c5bcf5b3fca610b7534",
+          "shape": [
+            5200,
+            5200
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            689980.0,
+            0.0,
+            -10.0,
+            3193200.0
+          ],
+          "valid": true
+        },
+        {
+          "band_count": 4,
+          "band_order_authority": "embedded_band_descriptions",
+          "bytes": 35567767,
+          "crs": "EPSG:32643",
+          "driver": "GTiff",
+          "embedded_band_descriptions": [
+            "building_fraction",
+            "weighted_road_density_normalized",
+            "built_form_base_proxy_unwatered_unfloored",
+            "mapped_infrastructure_mask"
+          ],
+          "errors": [],
+          "exists": true,
+          "expected_bands": [
+            "building_fraction",
+            "weighted_road_density_normalized",
+            "built_form_base_proxy_unwatered_unfloored",
+            "mapped_infrastructure_mask"
+          ],
+          "image_structure": {
+            "COMPRESSION": "DEFLATE",
+            "INTERLEAVE": "PIXEL",
+            "LAYOUT": "COG",
+            "OVERVIEW_RESAMPLING": "nearest"
+          },
+          "path": "outputs/psf_disaggregation/rasters/day2_inputs/india_delhi/overture_structure_bundle.tif",
+          "sha256": "e3fb320aa345e6ffbfdb56775666132e8e20bd03dd3f59b684f2103f2bba2213",
+          "shape": [
+            5200,
+            5200
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            689980.0,
+            0.0,
+            -10.0,
+            3193200.0
+          ],
+          "valid": true
+        }
+      ],
+      "city_id": "india_delhi",
+      "expected_crs": "EPSG:32643",
+      "expected_shape": [
+        5200,
+        5200
+      ],
+      "expected_transform": [
+        10.0,
+        0.0,
+        689980.0,
+        0.0,
+        -10.0,
+        3193200.0
+      ],
+      "ready": true,
+      "source_halo_m": 1000.0
+    }
+  ],
+  "config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "contract_version": "integrity_v3",
+  "created_at_utc": "2026-08-03T04:52:10.177026+00:00",
+  "experiment_id": "psf_disaggregation",
+  "policy": "do not fabricate empirical city outputs from preview PNGs; run the operator only after every declared 10 m georeferenced bundle passes",
+  "ready_for_two_city_operator_run": true,
+  "schema_version": 1
+}

@@ -1,0 +1,40 @@
+{
+  "classification": "general_low_proxy_reallocation_not_water_specific",
+  "comparisons": [
+    {
+      "city_id": "usa_new_york",
+      "direction": "inland_larger_reduction",
+      "matched_inland_reduction_fraction": 0.8099806036535486,
+      "proxy": "built_form_primary",
+      "water_minus_inland_reduction_fraction": -0.41715547887789395,
+      "water_reduction_fraction": 0.3928251247756547
+    },
+    {
+      "city_id": "usa_new_york",
+      "direction": "inland_larger_reduction",
+      "matched_inland_reduction_fraction": 0.6856227241524682,
+      "proxy": "s2_only_ablation",
+      "water_minus_inland_reduction_fraction": -0.6173373190177526,
+      "water_reduction_fraction": 0.0682854051347156
+    },
+    {
+      "city_id": "india_delhi",
+      "direction": "inland_larger_reduction",
+      "matched_inland_reduction_fraction": 0.551561926420095,
+      "proxy": "built_form_primary",
+      "water_minus_inland_reduction_fraction": -0.023881597218285755,
+      "water_reduction_fraction": 0.5276803292018093
+    },
+    {
+      "city_id": "india_delhi",
+      "direction": "inland_larger_reduction",
+      "matched_inland_reduction_fraction": 0.7048491832819161,
+      "proxy": "s2_only_ablation",
+      "water_minus_inland_reduction_fraction": -0.8945655827753498,
+      "water_reduction_fraction": -0.18971639949343366
+    }
+  ],
+  "control_caveat": "The existing radiance-blind control targets the lowest proxy-valued inland pixels more than 1500 m from mapped water. Its target count equals mapped-water area but is capped at 10% of eligible inland support; it does not distribution-match proxy values or urban context to mapped water.",
+  "headline": "Mapped water does not show a larger allocated-versus-direct reduction than the existing matched inland low-proxy control in either city or proxy.",
+  "scope": "Descriptive aggregate-sum ratios over common valid support; this is not independent fine-resolution accuracy validation."
+}

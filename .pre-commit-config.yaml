@@ -1,0 +1,15 @@
+minimum_pre_commit_version: "4.0"
+
+repos:
+  - repo: local
+    hooks:
+      - id: strip-notebook-outputs
+        name: strip notebook outputs and execution counts
+        entry: python3 scripts/notebook_hygiene.py --fix
+        language: system
+        files: \.ipynb$
+      - id: prevent-oversized-git-files
+        name: prevent files larger than 25 MiB
+        entry: python3 scripts/check_tracked_file_sizes.py --max-mib 25
+        language: system
+        pass_filenames: true

@@ -1,0 +1,44 @@
+experiment:
+  id: psf_disaggregation_city_registry
+  description: Minimal two-city registry retained for the PSF disaggregation sprint.
+  schema_version: 1
+
+candidate_cities:
+  workbook: assets/sprint_cities.csv
+  sheet_name: cities
+  selected_city_ids:
+    - usa_new_york
+    - india_delhi
+  analysis_radius_km: 25.0
+  default_timezone: UTC
+  timezone_source: configured_default
+
+date_window:
+  start: "2024-01-11"
+  end: "2024-04-19"
+
+target:
+  product: VNP46A2
+  version: "002"
+  target_band: DNB_BRDF_Corrected_NTL
+
+feature_groups: {}
+
+split_rules:
+  strategy: metadata_only
+  train:
+    date_start: "2024-01-11"
+    date_end: "2024-03-01"
+  validation:
+    date_start: "2024-03-02"
+    date_end: "2024-04-19"
+  cross_city_validation:
+    enabled: false
+  notes:
+    - This compact config supplies city metadata; held-out validation is defined in the PSF config.
+
+outputs:
+  root: outputs/psf_disaggregation
+  city_manifest: outputs/psf_disaggregation/manifests/cities.csv
+  dataset_manifest_yaml: outputs/psf_disaggregation/manifests/source_manifest.yaml
+  dataset_manifest_json: outputs/psf_disaggregation/manifests/source_manifest.json

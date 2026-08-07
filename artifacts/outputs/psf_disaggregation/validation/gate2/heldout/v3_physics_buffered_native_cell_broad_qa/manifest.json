@@ -1,0 +1,67 @@
+{
+  "artifact_version": "v3_physics_buffered_native_cell_broad_qa",
+  "config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "created_at_utc": "2026-08-03T04:16:41.181811+00:00",
+  "decision_id": "HELDOUT-001",
+  "evaluation_cohort": "frozen common Gate 0 native-cell cohort; broad radiance sampled at the registered native-cell centroids",
+  "fold_assignment": "sorted_5km_block_id_round_robin",
+  "gain_strata": [
+    "<0.8",
+    "0.8-1.25",
+    ">=1.25"
+  ],
+  "limitations": [
+    "larger buffers disproportionately retain spatial-block interiors",
+    "buffer rows are distance sensitivities, not exchangeable random samples",
+    "native-cell proxy gain remains a coarse analogue of the fine-grid operator",
+    "a separate remove-before-convolution run is required for the strongest leakage claim",
+    "broad-only cells absent from the frozen strict Gate 0 cohort are not added; this isolates radiance-contract sensitivity on identical targets"
+  ],
+  "maximum_neighbor_distance_m": 10000.0,
+  "method_class": "physics_buffered_native_cell_structural_gain_validation; still_coarse_analogue_not_remove_before_fine_grid_convolution",
+  "neighbor_count": 12,
+  "neighbors_only_baseline": "inverse_distance_squared",
+  "outputs": {
+    "gain_summary": {
+      "bytes": 5037,
+      "path": "outputs/psf_disaggregation/validation/gate2/heldout/v3_physics_buffered_native_cell_broad_qa/gain_summary.csv",
+      "sha256": "01c9c66d22dd09af6c23610bc09eeec8da8c47b4601f2a20809f257029f42f92"
+    },
+    "predictions": {
+      "bytes": 46479160,
+      "path": "outputs/psf_disaggregation/validation/gate2/heldout/v3_physics_buffered_native_cell_broad_qa/predictions.csv",
+      "sha256": "f1f13fdcc88e45a9bb6bbc5502133d488487f42cea35be5a4f1f7e2ca7303f42"
+    },
+    "sample_retention": {
+      "bytes": 7453,
+      "path": "outputs/psf_disaggregation/validation/gate2/heldout/v3_physics_buffered_native_cell_broad_qa/sample_retention.csv",
+      "sha256": "8d31f30263b16cf2107e51b0e494e9e4542b6f0a5d61c0cfadb2bcae4243aac2"
+    },
+    "summary": {
+      "bytes": 61147,
+      "path": "outputs/psf_disaggregation/validation/gate2/heldout/v3_physics_buffered_native_cell_broad_qa/summary.csv",
+      "sha256": "6d212dc1a929c58ed97d25a4e23fa6e283ad0c0f45e2bbbb06d36fdfced67cc8"
+    }
+  },
+  "primary_buffer_rationale": "four-sigma truncated support radius of registered 1500 m-FWHM Gaussian",
+  "primary_training_buffer_m": 2550.0,
+  "radiance_contract": "broad MQF-0/1 median with at least 5 retained observations",
+  "radiance_sources": {
+    "india_delhi": {
+      "bytes": 899555964,
+      "path": "outputs/psf_disaggregation/rasters/day2_inputs/india_delhi/ee_source_bundle.tif",
+      "sha256": "c7a381e9b3f538b55c9951d6d0fc2589568771f451dc4c5bcf5b3fca610b7534"
+    },
+    "usa_new_york": {
+      "bytes": 946679190,
+      "path": "outputs/psf_disaggregation/rasters/day2_inputs/usa_new_york/ee_source_bundle.tif",
+      "sha256": "28e95eb384da1cd5b39a1be5d6906e2a2e042bea69aab5e7605efd22ed4bc09a"
+    }
+  },
+  "radiance_variant": "broad",
+  "schema_version": 1,
+  "sensitivity_training_buffers_m": [
+    1500.0,
+    2000.0
+  ]
+}

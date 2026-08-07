@@ -1,0 +1,640 @@
+{
+  "artifact_version": "v2_broad_qa_reporting",
+  "cities": [
+    {
+      "city_id": "usa_new_york",
+      "configurations": [
+        {
+          "band_descriptions": [
+            "allocation",
+            "operator_consistency_error",
+            "radiance_support_fraction",
+            "proxy_support_fraction",
+            "allocation_support_fraction",
+            "geometric_support_fraction",
+            "valid_output_mask",
+            "operator_consistency_valid_mask",
+            "boundary_mask",
+            "invalid_radiance_neighborhood_mask",
+            "invalid_proxy_neighborhood_mask",
+            "denominator_floor_mask",
+            "denominator_instability_mask",
+            "negative_radiance_input_mask",
+            "negative_preclip_output_mask",
+            "insufficient_proxy_support_mask"
+          ],
+          "checkpoint_tile_count": 100,
+          "configuration": {
+            "fwhm_m": null,
+            "kernel_name": null,
+            "kind": "direct",
+            "name": "direct_upsample__broad_qa",
+            "proxy": null,
+            "radiance_contract": "broad",
+            "water_variant": null
+          },
+          "crs": "EPSG:32618",
+          "metrics": {
+            "boundary_mask_pixel_count": 0,
+            "denominator_floor_mask_pixel_count": 0,
+            "denominator_instability_mask_pixel_count": 0,
+            "insufficient_proxy_support_mask_pixel_count": 0,
+            "invalid_proxy_neighborhood_mask_pixel_count": 0,
+            "invalid_radiance_neighborhood_mask_pixel_count": 0,
+            "negative_preclip_output_mask_pixel_count": 0,
+            "negative_radiance_input_mask_pixel_count": 0,
+            "operator_consistency_bias": null,
+            "operator_consistency_mae": null,
+            "operator_consistency_rmse": null,
+            "operator_consistency_sample_count": 0,
+            "operator_consistency_valid_mask_pixel_count": 0,
+            "pixel_count": 25000000,
+            "valid_output_mask_pixel_count": 25000000
+          },
+          "metrics_sidecar": {
+            "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/direct_upsample__broad_qa/metrics.json",
+            "sha256": "b1a2acbf74ec2baf78049a5d359be06bd80f652e98cea7bf91aa3c5fb1a26b5b"
+          },
+          "normalization": null,
+          "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/direct_upsample__broad_qa/products.tif",
+          "processing_halo_pixels": 0,
+          "sha256": "cfe7926dcb860e2802122195ef80a8910a5f21413685e4163a34ed732e5fb39d",
+          "shape": [
+            5000,
+            5000
+          ],
+          "status": "complete",
+          "tile_pixels": 512,
+          "transform": [
+            10,
+            0.0,
+            558960.0,
+            0.0,
+            -10,
+            4532350.0
+          ]
+        },
+        {
+          "band_descriptions": [
+            "allocation",
+            "operator_consistency_error",
+            "radiance_support_fraction",
+            "proxy_support_fraction",
+            "allocation_support_fraction",
+            "geometric_support_fraction",
+            "valid_output_mask",
+            "operator_consistency_valid_mask",
+            "boundary_mask",
+            "invalid_radiance_neighborhood_mask",
+            "invalid_proxy_neighborhood_mask",
+            "denominator_floor_mask",
+            "denominator_instability_mask",
+            "negative_radiance_input_mask",
+            "negative_preclip_output_mask",
+            "insufficient_proxy_support_mask"
+          ],
+          "checkpoint_tile_count": 100,
+          "configuration": {
+            "fwhm_m": null,
+            "kernel_name": "circular_mean_reference",
+            "kind": "uniform",
+            "name": "uniform_normalized_convolution__broad_qa",
+            "proxy": null,
+            "radiance_contract": "broad",
+            "water_variant": null
+          },
+          "crs": "EPSG:32618",
+          "metrics": {
+            "boundary_mask_pixel_count": 0,
+            "denominator_floor_mask_pixel_count": 0,
+            "denominator_instability_mask_pixel_count": 0,
+            "insufficient_proxy_support_mask_pixel_count": 0,
+            "invalid_proxy_neighborhood_mask_pixel_count": 0,
+            "invalid_radiance_neighborhood_mask_pixel_count": 0,
+            "negative_preclip_output_mask_pixel_count": 0,
+            "negative_radiance_input_mask_pixel_count": 0,
+            "operator_consistency_bias": 0.008028987819099427,
+            "operator_consistency_mae": 5.5861148143995045,
+            "operator_consistency_rmse": 10.118060799946779,
+            "operator_consistency_sample_count": 25000000,
+            "operator_consistency_valid_mask_pixel_count": 25000000,
+            "pixel_count": 25000000,
+            "valid_output_mask_pixel_count": 25000000
+          },
+          "metrics_sidecar": {
+            "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/uniform_normalized_convolution__broad_qa/metrics.json",
+            "sha256": "7ccfd5cf55d4a3cb722d8213419a5c8b91980ca8637550a53ec3a609fd819f55"
+          },
+          "normalization": null,
+          "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/uniform_normalized_convolution__broad_qa/products.tif",
+          "processing_halo_pixels": 100,
+          "sha256": "5a32016ae7fe7249c115a747c23dd8b741c0190690cf3b6ffa8f0afe8a6feb93",
+          "shape": [
+            5000,
+            5000
+          ],
+          "status": "complete",
+          "tile_pixels": 512,
+          "transform": [
+            10,
+            0.0,
+            558960.0,
+            0.0,
+            -10,
+            4532350.0
+          ]
+        },
+        {
+          "band_descriptions": [
+            "allocation",
+            "operator_consistency_error",
+            "radiance_support_fraction",
+            "proxy_support_fraction",
+            "allocation_support_fraction",
+            "geometric_support_fraction",
+            "valid_output_mask",
+            "operator_consistency_valid_mask",
+            "boundary_mask",
+            "invalid_radiance_neighborhood_mask",
+            "invalid_proxy_neighborhood_mask",
+            "denominator_floor_mask",
+            "denominator_instability_mask",
+            "negative_radiance_input_mask",
+            "negative_preclip_output_mask",
+            "insufficient_proxy_support_mask"
+          ],
+          "checkpoint_tile_count": 100,
+          "configuration": {
+            "fwhm_m": null,
+            "kernel_name": "circular_mean_reference",
+            "kind": "stationary",
+            "name": "built_form_primary__no_water_prior__circular_mean_reference__broad_qa",
+            "proxy": "built_form_primary",
+            "radiance_contract": "broad",
+            "water_variant": "no_water_prior"
+          },
+          "crs": "EPSG:32618",
+          "metrics": {
+            "boundary_mask_pixel_count": 0,
+            "denominator_floor_mask_pixel_count": 0,
+            "denominator_instability_mask_pixel_count": 0,
+            "insufficient_proxy_support_mask_pixel_count": 0,
+            "invalid_proxy_neighborhood_mask_pixel_count": 0,
+            "invalid_radiance_neighborhood_mask_pixel_count": 0,
+            "negative_preclip_output_mask_pixel_count": 0,
+            "negative_radiance_input_mask_pixel_count": 0,
+            "operator_consistency_bias": 0.5592814592304254,
+            "operator_consistency_mae": 5.342407908056834,
+            "operator_consistency_rmse": 9.90745340050108,
+            "operator_consistency_sample_count": 25000000,
+            "operator_consistency_valid_mask_pixel_count": 25000000,
+            "pixel_count": 25000000,
+            "valid_output_mask_pixel_count": 25000000
+          },
+          "metrics_sidecar": {
+            "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/metrics.json",
+            "sha256": "1127b76ebb379cba69fb615fdbaa742ac6794677126ca0606730d8620b25b7e7"
+          },
+          "normalization": {
+            "mean": 0.2175143856843402,
+            "support": "50_km_analysis_square_including_water",
+            "support_pixel_count": 25000000
+          },
+          "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/products.tif",
+          "processing_halo_pixels": 100,
+          "sha256": "7776b805d783ada02f2593c08907375617368f78499abd9ca8afc3d7c7f739e0",
+          "shape": [
+            5000,
+            5000
+          ],
+          "status": "complete",
+          "tile_pixels": 512,
+          "transform": [
+            10,
+            0.0,
+            558960.0,
+            0.0,
+            -10,
+            4532350.0
+          ]
+        },
+        {
+          "band_descriptions": [
+            "allocation",
+            "operator_consistency_error",
+            "radiance_support_fraction",
+            "proxy_support_fraction",
+            "allocation_support_fraction",
+            "geometric_support_fraction",
+            "valid_output_mask",
+            "operator_consistency_valid_mask",
+            "boundary_mask",
+            "invalid_radiance_neighborhood_mask",
+            "invalid_proxy_neighborhood_mask",
+            "denominator_floor_mask",
+            "denominator_instability_mask",
+            "negative_radiance_input_mask",
+            "negative_preclip_output_mask",
+            "insufficient_proxy_support_mask"
+          ],
+          "checkpoint_tile_count": 100,
+          "configuration": {
+            "fwhm_m": null,
+            "kernel_name": "circular_mean_reference",
+            "kind": "stationary",
+            "name": "s2_only_ablation__no_water_prior__circular_mean_reference__broad_qa",
+            "proxy": "s2_only_ablation",
+            "radiance_contract": "broad",
+            "water_variant": "no_water_prior"
+          },
+          "crs": "EPSG:32618",
+          "metrics": {
+            "boundary_mask_pixel_count": 0,
+            "denominator_floor_mask_pixel_count": 0,
+            "denominator_instability_mask_pixel_count": 0,
+            "insufficient_proxy_support_mask_pixel_count": 0,
+            "invalid_proxy_neighborhood_mask_pixel_count": 1209492,
+            "invalid_radiance_neighborhood_mask_pixel_count": 0,
+            "negative_preclip_output_mask_pixel_count": 0,
+            "negative_radiance_input_mask_pixel_count": 0,
+            "operator_consistency_bias": 0.26643978467261686,
+            "operator_consistency_mae": 5.216360706855919,
+            "operator_consistency_rmse": 9.719560570974425,
+            "operator_consistency_sample_count": 22994308,
+            "operator_consistency_valid_mask_pixel_count": 22994308,
+            "pixel_count": 25000000,
+            "valid_output_mask_pixel_count": 23790508
+          },
+          "metrics_sidecar": {
+            "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/s2_only_ablation__no_water_prior__circular_mean_reference__broad_qa/metrics.json",
+            "sha256": "3ece2a7bd6d0909066c09cb284cc252aa75720a0cda3a9c4cc6df472870c007d"
+          },
+          "normalization": {
+            "mean": 0.33758371198489434,
+            "support": "50_km_analysis_square_including_water",
+            "support_pixel_count": 24693685
+          },
+          "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/s2_only_ablation__no_water_prior__circular_mean_reference__broad_qa/products.tif",
+          "processing_halo_pixels": 100,
+          "sha256": "b36e3b9fd2ae353a4569f1d476a81db8fcf7985e85c63affde11f9c4a2fb78e5",
+          "shape": [
+            5000,
+            5000
+          ],
+          "status": "complete",
+          "tile_pixels": 512,
+          "transform": [
+            10,
+            0.0,
+            558960.0,
+            0.0,
+            -10,
+            4532350.0
+          ]
+        }
+      ],
+      "radiance_blind_gain": {
+        "copied_from": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/usa_new_york/built_form_primary__no_water_prior__circular_mean_reference/trust_indicators.tif",
+        "identity_reason": "gain depends on proxy and kernel, not radiance",
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/trust_indicators.tif",
+        "sha256": "2da15d0cc02545e89d4446e62ae033ef546cc1b9b087dc4c62ba66fedbb3a6ff"
+      },
+      "s2_ablation_radiance_blind_gain": {
+        "copied_from": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/usa_new_york/s2_only_ablation__no_water_prior__circular_mean_reference/trust_indicators.tif",
+        "identity_reason": "gain depends on proxy and kernel, not radiance",
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/usa_new_york/s2_only_ablation__no_water_prior__circular_mean_reference__broad_qa/trust_indicators.tif",
+        "sha256": "ae73447106347b2746db4870b497a2638fbcf59909c4a937d9af893db97bd593"
+      }
+    },
+    {
+      "city_id": "india_delhi",
+      "configurations": [
+        {
+          "band_descriptions": [
+            "allocation",
+            "operator_consistency_error",
+            "radiance_support_fraction",
+            "proxy_support_fraction",
+            "allocation_support_fraction",
+            "geometric_support_fraction",
+            "valid_output_mask",
+            "operator_consistency_valid_mask",
+            "boundary_mask",
+            "invalid_radiance_neighborhood_mask",
+            "invalid_proxy_neighborhood_mask",
+            "denominator_floor_mask",
+            "denominator_instability_mask",
+            "negative_radiance_input_mask",
+            "negative_preclip_output_mask",
+            "insufficient_proxy_support_mask"
+          ],
+          "checkpoint_tile_count": 100,
+          "configuration": {
+            "fwhm_m": null,
+            "kernel_name": null,
+            "kind": "direct",
+            "name": "direct_upsample__broad_qa",
+            "proxy": null,
+            "radiance_contract": "broad",
+            "water_variant": null
+          },
+          "crs": "EPSG:32643",
+          "metrics": {
+            "boundary_mask_pixel_count": 0,
+            "denominator_floor_mask_pixel_count": 0,
+            "denominator_instability_mask_pixel_count": 0,
+            "insufficient_proxy_support_mask_pixel_count": 0,
+            "invalid_proxy_neighborhood_mask_pixel_count": 0,
+            "invalid_radiance_neighborhood_mask_pixel_count": 0,
+            "negative_preclip_output_mask_pixel_count": 0,
+            "negative_radiance_input_mask_pixel_count": 0,
+            "operator_consistency_bias": null,
+            "operator_consistency_mae": null,
+            "operator_consistency_rmse": null,
+            "operator_consistency_sample_count": 0,
+            "operator_consistency_valid_mask_pixel_count": 0,
+            "pixel_count": 25000000,
+            "valid_output_mask_pixel_count": 25000000
+          },
+          "metrics_sidecar": {
+            "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/direct_upsample__broad_qa/metrics.json",
+            "sha256": "a61e87fd976c80cdc5a33e9be6e3ba76e31d5f5751953d7648e9cf26acee57c7"
+          },
+          "normalization": null,
+          "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/direct_upsample__broad_qa/products.tif",
+          "processing_halo_pixels": 0,
+          "sha256": "9b7e69186460a02051e1a1b9d8381693bfb6f604b24a3daf20383be64ab61d92",
+          "shape": [
+            5000,
+            5000
+          ],
+          "status": "complete",
+          "tile_pixels": 512,
+          "transform": [
+            10,
+            0.0,
+            690980.0,
+            0.0,
+            -10,
+            3192200.0
+          ]
+        },
+        {
+          "band_descriptions": [
+            "allocation",
+            "operator_consistency_error",
+            "radiance_support_fraction",
+            "proxy_support_fraction",
+            "allocation_support_fraction",
+            "geometric_support_fraction",
+            "valid_output_mask",
+            "operator_consistency_valid_mask",
+            "boundary_mask",
+            "invalid_radiance_neighborhood_mask",
+            "invalid_proxy_neighborhood_mask",
+            "denominator_floor_mask",
+            "denominator_instability_mask",
+            "negative_radiance_input_mask",
+            "negative_preclip_output_mask",
+            "insufficient_proxy_support_mask"
+          ],
+          "checkpoint_tile_count": 100,
+          "configuration": {
+            "fwhm_m": null,
+            "kernel_name": "circular_mean_reference",
+            "kind": "uniform",
+            "name": "uniform_normalized_convolution__broad_qa",
+            "proxy": null,
+            "radiance_contract": "broad",
+            "water_variant": null
+          },
+          "crs": "EPSG:32643",
+          "metrics": {
+            "boundary_mask_pixel_count": 0,
+            "denominator_floor_mask_pixel_count": 0,
+            "denominator_instability_mask_pixel_count": 0,
+            "insufficient_proxy_support_mask_pixel_count": 0,
+            "invalid_proxy_neighborhood_mask_pixel_count": 0,
+            "invalid_radiance_neighborhood_mask_pixel_count": 0,
+            "negative_preclip_output_mask_pixel_count": 0,
+            "negative_radiance_input_mask_pixel_count": 0,
+            "operator_consistency_bias": 0.01909753052712917,
+            "operator_consistency_mae": 3.73301856723186,
+            "operator_consistency_rmse": 6.005342687728909,
+            "operator_consistency_sample_count": 25000000,
+            "operator_consistency_valid_mask_pixel_count": 25000000,
+            "pixel_count": 25000000,
+            "valid_output_mask_pixel_count": 25000000
+          },
+          "metrics_sidecar": {
+            "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/uniform_normalized_convolution__broad_qa/metrics.json",
+            "sha256": "41532900fe530774069a99d7131d8c1f7cb412a5a60328ae4c6c5070207ff19d"
+          },
+          "normalization": null,
+          "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/uniform_normalized_convolution__broad_qa/products.tif",
+          "processing_halo_pixels": 100,
+          "sha256": "39af845a512f16bb2c9031cc0b772f1a3ccd59aba19309a4fd0e31d60bd330e6",
+          "shape": [
+            5000,
+            5000
+          ],
+          "status": "complete",
+          "tile_pixels": 512,
+          "transform": [
+            10,
+            0.0,
+            690980.0,
+            0.0,
+            -10,
+            3192200.0
+          ]
+        },
+        {
+          "band_descriptions": [
+            "allocation",
+            "operator_consistency_error",
+            "radiance_support_fraction",
+            "proxy_support_fraction",
+            "allocation_support_fraction",
+            "geometric_support_fraction",
+            "valid_output_mask",
+            "operator_consistency_valid_mask",
+            "boundary_mask",
+            "invalid_radiance_neighborhood_mask",
+            "invalid_proxy_neighborhood_mask",
+            "denominator_floor_mask",
+            "denominator_instability_mask",
+            "negative_radiance_input_mask",
+            "negative_preclip_output_mask",
+            "insufficient_proxy_support_mask"
+          ],
+          "checkpoint_tile_count": 100,
+          "configuration": {
+            "fwhm_m": null,
+            "kernel_name": "circular_mean_reference",
+            "kind": "stationary",
+            "name": "built_form_primary__no_water_prior__circular_mean_reference__broad_qa",
+            "proxy": "built_form_primary",
+            "radiance_contract": "broad",
+            "water_variant": "no_water_prior"
+          },
+          "crs": "EPSG:32643",
+          "metrics": {
+            "boundary_mask_pixel_count": 0,
+            "denominator_floor_mask_pixel_count": 0,
+            "denominator_instability_mask_pixel_count": 0,
+            "insufficient_proxy_support_mask_pixel_count": 0,
+            "invalid_proxy_neighborhood_mask_pixel_count": 0,
+            "invalid_radiance_neighborhood_mask_pixel_count": 0,
+            "negative_preclip_output_mask_pixel_count": 0,
+            "negative_radiance_input_mask_pixel_count": 0,
+            "operator_consistency_bias": 0.5724369535219574,
+            "operator_consistency_mae": 3.8849465810182,
+            "operator_consistency_rmse": 6.37850997087031,
+            "operator_consistency_sample_count": 25000000,
+            "operator_consistency_valid_mask_pixel_count": 25000000,
+            "pixel_count": 25000000,
+            "valid_output_mask_pixel_count": 25000000
+          },
+          "metrics_sidecar": {
+            "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/metrics.json",
+            "sha256": "631f0e6f5e7cc0097b1ef3cca0052392de2564d9d7e80f5282987fadf60e11ef"
+          },
+          "normalization": {
+            "mean": 0.20553180738301774,
+            "support": "50_km_analysis_square_including_water",
+            "support_pixel_count": 25000000
+          },
+          "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/products.tif",
+          "processing_halo_pixels": 100,
+          "sha256": "5362dfe44f75ab5c1b8a6a17fbf2bce1da263969ebca3d31dc4b4bd960d0cb15",
+          "shape": [
+            5000,
+            5000
+          ],
+          "status": "complete",
+          "tile_pixels": 512,
+          "transform": [
+            10,
+            0.0,
+            690980.0,
+            0.0,
+            -10,
+            3192200.0
+          ]
+        }
+      ],
+      "radiance_blind_gain": {
+        "copied_from": "outputs/psf_disaggregation/rasters/full_city/v1_resumable_tiled/india_delhi/built_form_primary__no_water_prior__circular_mean_reference/trust_indicators.tif",
+        "identity_reason": "gain depends on proxy and kernel, not radiance",
+        "path": "outputs/psf_disaggregation/rasters/full_city/v2_broad_qa_reporting/india_delhi/built_form_primary__no_water_prior__circular_mean_reference__broad_qa/trust_indicators.tif",
+        "sha256": "e6b5d54554b1078d2c3899f737523aee63b1926baef725cc5be49a6629d0c5bf"
+      }
+    }
+  ],
+  "complete": true,
+  "config_sha256": "9a0338232881f7d6353259672d6a3c45f83b50d67dacbc00f3d8d986b72d718a",
+  "configuration_matrix_by_city": {
+    "india_delhi": [
+      {
+        "fwhm_m": null,
+        "kernel_name": null,
+        "kind": "direct",
+        "name": "direct_upsample__broad_qa",
+        "proxy": null,
+        "radiance_contract": "broad",
+        "water_variant": null
+      },
+      {
+        "fwhm_m": null,
+        "kernel_name": "circular_mean_reference",
+        "kind": "uniform",
+        "name": "uniform_normalized_convolution__broad_qa",
+        "proxy": null,
+        "radiance_contract": "broad",
+        "water_variant": null
+      },
+      {
+        "fwhm_m": null,
+        "kernel_name": "circular_mean_reference",
+        "kind": "stationary",
+        "name": "built_form_primary__no_water_prior__circular_mean_reference__broad_qa",
+        "proxy": "built_form_primary",
+        "radiance_contract": "broad",
+        "water_variant": "no_water_prior"
+      }
+    ],
+    "usa_new_york": [
+      {
+        "fwhm_m": null,
+        "kernel_name": null,
+        "kind": "direct",
+        "name": "direct_upsample__broad_qa",
+        "proxy": null,
+        "radiance_contract": "broad",
+        "water_variant": null
+      },
+      {
+        "fwhm_m": null,
+        "kernel_name": "circular_mean_reference",
+        "kind": "uniform",
+        "name": "uniform_normalized_convolution__broad_qa",
+        "proxy": null,
+        "radiance_contract": "broad",
+        "water_variant": null
+      },
+      {
+        "fwhm_m": null,
+        "kernel_name": "circular_mean_reference",
+        "kind": "stationary",
+        "name": "built_form_primary__no_water_prior__circular_mean_reference__broad_qa",
+        "proxy": "built_form_primary",
+        "radiance_contract": "broad",
+        "water_variant": "no_water_prior"
+      },
+      {
+        "fwhm_m": null,
+        "kernel_name": "circular_mean_reference",
+        "kind": "stationary",
+        "name": "s2_only_ablation__no_water_prior__circular_mean_reference__broad_qa",
+        "proxy": "s2_only_ablation",
+        "radiance_contract": "broad",
+        "water_variant": "no_water_prior"
+      }
+    ]
+  },
+  "created_at_utc": "2026-08-03T04:52:58.707207+00:00",
+  "day2_input_audit": "outputs/psf_disaggregation/manifests/day2_input_audit.json",
+  "quality_contract": {
+    "cloud_detection_values": [
+      0,
+      1
+    ],
+    "description": "Sensitivity retaining MQF 1 despite the NASA/catalog metadata discrepancy.",
+    "downstream_analysis": {
+      "allocation_proxy": "built_form_primary",
+      "city_ids": [
+        "usa_new_york"
+      ],
+      "include_in_full_factorial": false,
+      "kernel": "circular_mean_reference",
+      "mode": "targeted_reference_configuration",
+      "purpose": "quantify_effect_of_strict_qa_support_gap",
+      "water_variant": "combined_soft"
+    },
+    "exclude_cirrus": true,
+    "exclude_shadow": true,
+    "mandatory_quality_values": [
+      0,
+      1
+    ],
+    "minimum_cloud_mask_quality": 1,
+    "minimum_valid_observations": 5,
+    "require_night": true,
+    "require_snow_free": true,
+    "variant": "broad_sensitivity"
+  },
+  "reporting_change": "coverage-complete broad-QA median selected for demonstration output; strict v1 remains immutable conservative sensitivity",
+  "schema_version": 1,
+  "strict_artifacts_modified": false
+}
